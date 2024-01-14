@@ -1,2 +1,2 @@
-# FrontEndStudy
-Personal repository for frontend study
+# Front-End Study
+Personal repository for front-end study
