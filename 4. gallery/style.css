@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Indie+Flower&display=swap');
+
+body {
+    display: flex;
+    background-color: rgb(241, 211, 216);
+    align-items: center;
+    justify-content: center;
+}
+div#gallery {
+    display: grid;
+    grid-template-columns: auto auto;
+    width: 500px;
+    column-gap: 20px;
+    row-gap: 20px;
+}
+div#gallery img {
+    width: 100%;
+    height: 100%;
+    transition: all .2s linear;
+}
+
+div:has(img:hover) img:not(:hover) {
+    opacity: 0.7;
+    scale: 0.7;
+}
+
+img:hover {
+    scale: 1.3;
+}
+
+div#description {
+    width: 500px;
+    height: 500px;
+    position: relative;
+    left: 100px;
+    font-family: "caveat";
+}
+
+div#description div {
+    opacity: 0;
+}
+
+div#description h1{
+    font-family: "Indie Flower";
+}
+
+div#description div {
+    position: absolute;
+    top: 0;
+}
+
+div#description #desc_img2 {
+    position: absolute;
+    top: 0;
+}
