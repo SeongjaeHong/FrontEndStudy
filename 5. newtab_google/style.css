@@ -1,0 +1,132 @@
+body {
+    min-height: 100vh;
+    background-color: rgb(10, 99, 110);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+div#tabtitle {
+    font-weight: bold;
+    font-size: 5rem;
+}
+
+div#searchbar {
+    border-radius: 2rem;
+    background-color: white;
+    position: relative;
+    margin-top: 3rem;
+    width: 35rem;
+    height: 2.5rem;
+    /* margin-top: 50px; */
+}
+
+span#search {
+    position: absolute;
+    /* margin: .3rem 0 0 .5rem; */
+    top: .6rem;
+    left: 1rem;
+    cursor: pointer;
+}
+
+input#search_text {
+    top: .6rem;
+}
+
+span#mic {
+    position: absolute;
+    right: 4rem;
+    top: .6rem;
+}
+
+span#camera {
+    position: absolute;
+    right: 1.5rem;
+    top: .6rem;
+}
+
+.material-icons.md-dark {
+    color: rgba(0, 0, 0, 0.54);
+}
+
+input {
+    position: relative;
+    border: 0;
+    margin-left: 3rem;
+    top: .1rem;
+    bottom: .2rem;
+    width: 73%;
+    height: 1rem;
+}
+
+div#shortcut_pannel {
+    margin-top: 2rem;
+    display: flex;
+}
+
+div#shortcut_pannel .background {
+    border-radius: .3rem;
+    width: 7rem;
+    height: 7rem;
+    /* display: flex; */
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+div#shortcut_pannel .background:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+div#shortcut_pannel .background .icon_background {
+    width: 45%;
+    height: 45%;
+    border-radius: 50%;
+    background-color: rgb(16, 71, 78);
+    margin: 15% 0 0 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+div#shortcut_pannel .background .icon_background .icon {
+    width: 50%;
+}
+
+div#shortcut_pannel .background .name {
+    color: white;
+    position: relative;
+    margin: .5rem 1rem 0 1rem;
+    font-size: 0.9rem;
+    text-align: center;
+    white-space: nowrap;    
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+div#shortcut_pannel .background .shorcut_menu_pannel {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 25%;
+    height: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .8rem;
+    border-radius: 50%;
+    color: white;
+}
+
+div#shortcut_pannel .background:hover .shorcut_menu_pannel {
+    opacity: 1;
+}
+
+
+div#shortcut_pannel .background .shorcut_menu_pannel:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}

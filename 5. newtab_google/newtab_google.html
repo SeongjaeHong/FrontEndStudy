@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>New tab</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/78e1860a6b.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div id="tabtitle">Google</div>
+    <div id="searchbar">
+        <span id="search" class="material-icons md-dark" onclick="search()">search</span>
+        <input type="text" id="search_text" placeholder="Search Google or type a URL">
+        <span id="mic" class="material-icons">mic</span>
+        <span id="camera" class="material-icons">photo_camera</span>
+    </div>
+    <div id="shortcut_pannel">
+        <div class="background" onmouseover="settransition(this)" onmouseleave="cleartransition(this)">
+            <div class="shorcut_menu_pannel fa-solid fa-ellipsis-vertical"></div>
+            <div class="icon_background">
+                <img class="icon" src="favicon/youtube.ico" alt="youtube">
+            </div>
+            <div class="name">Youtube</div>
+        </div>
+        <div class="background" onmouseover="settransition(this)" onmouseleave="cleartransition(this)">
+            <div class="shorcut_menu_pannel fa-solid fa-ellipsis-vertical"></div>
+            <div class="icon_background">
+                <img class="icon" src="favicon/google_translator.ico" alt="google_translator">
+            </div>
+            <div class="name">Google translationdddddddddddddd</div>
+        </div>
+    </div>
+</body>
+
+</html>
