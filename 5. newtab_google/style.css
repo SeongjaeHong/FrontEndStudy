@@ -7,9 +7,26 @@ body {
     flex-direction: column;
 }
 
+@media screen and (max-width: 800px){
+    body {
+        background-color: green;
+    }
+    div#searchbar {
+        width: 17rem;        
+    }
+
+    div#shortcut_pannel {
+        margin-top: 2rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
 div#tabtitle {
     font-weight: bold;
     font-size: 5rem;
+    color: white;
 }
 
 div#searchbar {
@@ -19,12 +36,10 @@ div#searchbar {
     margin-top: 3rem;
     width: 35rem;
     height: 2.5rem;
-    /* margin-top: 50px; */
 }
 
 span#search {
     position: absolute;
-    /* margin: .3rem 0 0 .5rem; */
     top: .6rem;
     left: 1rem;
     cursor: pointer;
@@ -62,18 +77,15 @@ input {
 
 div#shortcut_pannel {
     margin-top: 2rem;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
 }
 
 div#shortcut_pannel .background {
     border-radius: .3rem;
     width: 7rem;
     height: 7rem;
-    /* display: flex; */
     position: relative;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
     cursor: pointer;
 }
 
