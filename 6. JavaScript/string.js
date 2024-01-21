@@ -92,5 +92,53 @@ function getMaxSubSum(arr) {
     }
     return group;
 }
-arr = [-9, 0, 6, -2, 5, -4, -7, 11, 0, -1, 6];
-alert(getMaxSubSum(arr))
+// arr = [-9, 0, 6, -2, 5, -4, -7, 11, 0, -1, 6];
+// alert(getMaxSubSum(arr))  // 7, 10, 16
+
+////////
+// let x = [-1, 'a', 0, -1]
+// x.forEach((item, index) => { console.log(`${item}:${typeof (item)}, ${index}:${typeof (index)}`) });
+/* Output
+-1:number, 0:number
+'a':string, 1:number
+0:number, 2:number
+-1:number, 3:number
+*/
+
+////////
+// let users = [
+//     { id: 1, name: "John" },
+//     { id: 2, name: "Pete" },
+//     { id: 3, name: "Mary" }
+// ];
+// let user = users.find(item => item.id == 1);
+// Output: {id: 2, name: 'Pete'}
+
+////////
+// let john = { name: "John", age: 25 };
+// let pete = { name: "Pete", age: 30 };
+// let mary = { name: "Mary", age: 28 };
+// let users = [ john, pete, mary ];
+// let names = users.map(info=>info.name);
+// alert( names ); // John, Pete, Mary
+
+/////////
+function sortByAge(arr) {
+    // function compare(a, b) {
+    //     return a.age > b.age ? 1 : -1;
+    // }
+    // arr.sort(compare);
+    arr.sort((a, b) => a.age - b.age);
+}
+let john = { name: "John", age: 25 };
+let pete = { name: "Pete", age: 30 };
+let mary = { name: "Mary", age: 28 };
+
+let arr = [pete, john, mary];
+
+sortByAge(arr);
+
+// now: [john, mary, pete]
+alert(arr[0].name); // John
+alert(arr[1].name); // Mary
+alert(arr[2].name); // Pete
