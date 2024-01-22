@@ -53,3 +53,16 @@ let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
 alert(aclean(arr));
 */
 
+let messages = [
+    { text: "Hello", from: "John" },
+    { text: "How goes?", from: "John" },
+    { text: "See you soon", from: "Alice" }
+];
+
+let chkReadMsg = new WeakSet();
+chkReadMsg.add(messages[0])
+console.log(chkReadMsg.has(messages[0]))
+console.log(chkReadMsg.has(messages[1]))
+
+let readMsgWhen = new WeakMap();
+readMsgWhen.add(messages[0], Date())
