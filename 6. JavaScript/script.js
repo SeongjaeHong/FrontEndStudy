@@ -80,6 +80,7 @@ let chkReadMsg = new WeakSet();
 
 //   alert(doublePrices.meat); // 8
 
+/*
 function sumSalaries(salary) {
     // sum = 0;
     // for (x of Object.values(salary)) {
@@ -106,3 +107,37 @@ let user = {
 };
 
 alert(count(user)); // 2
+*/
+
+/*
+let user = {
+  name: "John",
+  years: 30
+};
+
+let {name, years:age, isAdmin=false} = user;
+console.log(name);
+console.log(age);
+console.log(isAdmin);
+*/
+function topSalary(salaries){
+    // arr=Object.entries(salaries);
+    // if (!arr) return null;
+    // arr.sort((name1, name2)=>(name2[1]-name1[1]));
+    // return arr[0];
+    let max = 0;
+    let maxName = null;
+    for(let [name, salary] of Object.entries(salaries)){
+        if(max<salary){
+            max = salary;
+            maxName = name;
+        }
+    }
+    return maxName;
+}
+let salaries = {
+    "John": 100,
+    "Pete": 300,
+    "Mary": 250
+  };
+console.log(topSalary(salaries));
