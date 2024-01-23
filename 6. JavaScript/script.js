@@ -67,15 +67,42 @@ let chkReadMsg = new WeakSet();
 // let readMsgWhen = new WeakMap();
 // readMsgWhen.add(messages[0], Date())
 
-let prices = {
-    banana: 1,
-    orange: 2,
-    meat: 4,
-  };
-  
-  let doublePrices = Object.fromEntries(
-    // 객체를 배열로 변환해서 배열 전용 메서드인 map을 적용하고 fromEntries를 사용해 배열을 다시 객체로 되돌립니다.
-    Object.entries(prices).map(([key, value]) => [key, value * 2])
-  );
-  
-  alert(doublePrices.meat); // 8
+// let prices = {
+//     banana: 1,
+//     orange: 2,
+//     meat: 4,
+//   };
+
+//   let doublePrices = Object.fromEntries(
+//     // 객체를 배열로 변환해서 배열 전용 메서드인 map을 적용하고 fromEntries를 사용해 배열을 다시 객체로 되돌립니다.
+//     Object.entries(prices).map(([key, value]) => [key, value * 2])
+//   );
+
+//   alert(doublePrices.meat); // 8
+
+function sumSalaries(salary) {
+    // sum = 0;
+    // for (x of Object.values(salary)) {
+    //     sum += x;
+    // }
+    // return sum;
+    return Object.values(salary).reduce((sum, money) => sum + money, 0);
+}
+let salaries = {
+    "John": 100,
+    "Pete": 300,
+    "Mary": 250
+};
+
+console.log(sumSalaries(salaries)); // 650
+
+function count(obj) {
+    return Object.keys(obj).length;
+}
+
+let user = {
+    name: 'John',
+    age: 30
+};
+
+alert(count(user)); // 2
