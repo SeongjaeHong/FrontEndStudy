@@ -60,9 +60,22 @@ let messages = [
 ];
 
 let chkReadMsg = new WeakSet();
-chkReadMsg.add(messages[0])
-console.log(chkReadMsg.has(messages[0]))
-console.log(chkReadMsg.has(messages[1]))
+// chkReadMsg.add(messages[0])
+// console.log(chkReadMsg.has(messages[0]))
+// console.log(chkReadMsg.has(messages[1]))
 
-let readMsgWhen = new WeakMap();
-readMsgWhen.add(messages[0], Date())
+// let readMsgWhen = new WeakMap();
+// readMsgWhen.add(messages[0], Date())
+
+let prices = {
+    banana: 1,
+    orange: 2,
+    meat: 4,
+  };
+  
+  let doublePrices = Object.fromEntries(
+    // 객체를 배열로 변환해서 배열 전용 메서드인 map을 적용하고 fromEntries를 사용해 배열을 다시 객체로 되돌립니다.
+    Object.entries(prices).map(([key, value]) => [key, value * 2])
+  );
+  
+  alert(doublePrices.meat); // 8
