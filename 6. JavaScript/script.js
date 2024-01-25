@@ -120,6 +120,8 @@ console.log(name);
 console.log(age);
 console.log(isAdmin);
 */
+
+/*
 function topSalary(salaries){
     // arr=Object.entries(salaries);
     // if (!arr) return null;
@@ -141,3 +143,8 @@ let salaries = {
     "Mary": 250
   };
 console.log(topSalary(salaries));
+/*
+
+const ages = [3, 10, 18, 20];
+console.log(ages.indexOf(18))
+console.log(ages>13)
