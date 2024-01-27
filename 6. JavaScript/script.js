@@ -123,10 +123,6 @@ console.log(isAdmin);
 
 /*
 function topSalary(salaries){
-    // arr=Object.entries(salaries);
-    // if (!arr) return null;
-    // arr.sort((name1, name2)=>(name2[1]-name1[1]));
-    // return arr[0];
     let max = 0;
     let maxName = null;
     for(let [name, salary] of Object.entries(salaries)){
@@ -143,8 +139,18 @@ let salaries = {
     "Mary": 250
   };
 console.log(topSalary(salaries));
-/*
+*/
 
-const ages = [3, 10, 18, 20];
-console.log(ages.indexOf(18))
-console.log(ages>13)
+function getLocalDay(date){
+    let euDay = [7, 1, 2, 3, 4, 5, 6];
+    return euDay[date.getDay()];
+}
+let date = new Date(2024, 0, 27)
+// alert(getLocalDay(date));
+
+function getDateAgo(date, day){
+    return new Date(date - day * 24 * 3600 * 1000);
+}
+alert(getDateAgo(date, 365))
+
+alert(date.getDate())
