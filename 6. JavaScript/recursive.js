@@ -91,11 +91,19 @@ function sumAll(...args) {
 	for (let arg of args) sum += arg;
 	return sum;
 }
-alert(sumAll(1,2,5));
+//alert(sumAll(1,2,5));
 
 function showName(firstName, lastName, ...titles){
 	alert(firstName + ' ' + lastName);
-	alert(titles[0])
+	alert(titles[0]);
 	alert(titles[1]);
 }
-showName("Bora", "Lee", "Software Engineer", "Researcher");
+//showName("Bora", "Lee", "Software Engineer", "Researcher");
+
+//let arr = [5,4,6];
+//alert(Math.max(3,...arr,13))
+let str = 'hello';
+//alert([...str]);
+let obj = { a: 1, b: 2, c: 3 };
+let objCopy = { ...obj }; 
+alert(JSON.stringify(objCopy));
