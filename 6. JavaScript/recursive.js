@@ -84,4 +84,18 @@ function printReverseList(list) {
     }
 }
 
-printReverseList(list);
+// printReverseList(list);
+
+function sumAll(...args) {
+	let sum = 0;
+	for (let arg of args) sum += arg;
+	return sum;
+}
+alert(sumAll(1,2,5));
+
+function showName(firstName, lastName, ...titles){
+	alert(firstName + ' ' + lastName);
+	alert(titles[0])
+	alert(titles[1]);
+}
+showName("Bora", "Lee", "Software Engineer", "Researcher");
