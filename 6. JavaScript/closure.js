@@ -54,7 +54,7 @@ function func() {
 func();
 */
 
-
+/*
 function byField(key) {
     return (a, b) => a[key] > b[key] ? 1 : -1;
 }
@@ -67,5 +67,34 @@ let users = [
 
 users.sort(byField('name'));
 console.log(JSON.stringify(users, null, 2));
+*/
 
+function makeArmy() {
+    let shooters_i = [];
+    let shooters_j = [];
 
+    let i = 0;
+    while (i < 10) {
+        let shooter = function () {
+            console.log(i);
+        };
+        shooters_i.push(shooter);
+        i++;
+    }
+
+    for(let j=0;j<10;j++){
+        let shooter = function () {
+            console.log(j);
+        };
+        shooters_j.push(shooter);
+    }
+
+    return [shooters_i, shooters_j];
+}
+
+let [army_i, army_j]= makeArmy();
+
+army_i[0]();
+army_i[5]();
+army_j[0]();
+army_j[5]();
