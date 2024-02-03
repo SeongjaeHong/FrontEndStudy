@@ -64,6 +64,7 @@ counter.decrease();
 alert(counter());
 */
 
+/*
 function sum(num){
     let num2 = num;
 
@@ -77,3 +78,29 @@ function sum(num){
     return f;
 }
 alert(sum(5)(3));
+*/
+
+/*
+function printNumbers(from, to) {
+  let n=from;
+  let timerId = setInterval(go, 1000);
+  function go(){
+    console.log(n);    
+    if (n == to){
+      clearInterval(timerId);
+    }
+    n++;
+  }
+  go();
+}
+
+printNumbers(5,6);
+
+*/
+
+let i = 0;
+
+setTimeout(() => alert(i), 1);
+for(let j = 0; j < 10000; j++) {
+  i++;
+}
