@@ -1,25 +1,51 @@
-class User {
-
-    constructor(name) {
-        // setter를 활성화합니다.
-        this.name = name;
+class Clock {
+    constructor({ template }) {
+        this.template = template;
     }
 
-    get name() {
-        return this._name;
+    render() {
+        let date = new Date();
+
+        let hours = date.getHours();
+        if (hours < 10) hours = '0' + hours;
+
+        let mins = date.getMinutes();
+        if (mins < 10) mins = '0' + mins;
+
+        let secs = date.getSeconds();
+        if (secs < 10) secs = '0' + secs;
+
+        let output = this.template
+            .replace('h', hours)
+            .replace('m', mins)
+            .replace('s', secs);
+
+        console.log(output);
     }
 
-    set name(value) {
-        if (value.length < 4) {
-            alert("이름이 너무 짧습니다.");
-            return;
-        }
-        this._name = value;
+    stop() {
+        clearInterval(this.timer);
     }
 
+    start() {
+        this.render();
+        this.timer = setInterval(() => this.render(), 1000);
+    }
 }
 
-let user = new User("보라fkfk");
-alert(user.name); // 보라
+class ExtendedClock extends Clock {
+    constructor(args){
+        super(args);
+        let {precision = 1000} = args;
+        this.precision = precision;
+    }
 
-// user = new User(""); // 이름이 너무 짧습니다.
+    start() {
+        this.render();
+        this.timer = setInterval(() => this.render(), this.precision);
+    }
+}
+
+let clock = new ExtendedClock({template: 'hh:mm:ss'})
+clock.start();
+setTimeout(()=>clock.stop(), 5000);
