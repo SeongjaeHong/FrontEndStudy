@@ -45,6 +45,8 @@ user.sayHi = user.sayHi.defer(1000);
 user.sayHi();
 */
 
+
+/*
 // let dictionary = Object.create(null, {
 //     toString: {
 //         value() {
@@ -52,6 +54,7 @@ user.sayHi();
 //         }
 //     }
 // });
+
 let dictionary = Object.create(null);
 dictionary.toString = function(){
     return Object.keys(this).join();
@@ -69,3 +72,22 @@ for(let key in dictionary){
 }
 
 alert(dictionary);
+*/
+
+Function.prototype.defer = function (ms) {
+    let f = this;
+    return function () {
+        setTimeout(() => f.apply(this), ms);
+    }
+};
+
+let user = {
+    name: "John",
+    sayHi() {
+        alert(this.name);
+    }
+}
+
+user.sayHi = user.sayHi.defer(1000);
+
+user.sayHi();
