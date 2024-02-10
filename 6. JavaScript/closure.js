@@ -69,6 +69,7 @@ users.sort(byField('name'));
 console.log(JSON.stringify(users, null, 2));
 */
 
+/*
 function makeArmy() {
     let shooters_i = [];
     let shooters_j = [];
@@ -98,3 +99,18 @@ army_i[0]();
 army_i[5]();
 army_j[0]();
 army_j[5]();
+*/
+
+function outer(){
+    let x = 0;
+    return function(){
+        return x++;
+    };
+}
+
+let c1 = outer();
+let c2 = outer();
+console.log(c1());
+console.log(c1());
+console.log(c1());
+console.log(c2());
