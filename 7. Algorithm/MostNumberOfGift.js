@@ -1,20 +1,21 @@
 /*
-function getNumber(str) {
-    let number;
-    const range = (start, end, step = 1) =>
-        Array.from({ length: (end - start) / step + 1 }, (v, k) => end - k * step);
+Title: 가장 많이 받은 선물
+Link: https://school.programmers.co.kr/learn/courses/30/lessons/258712
 
-        for (let x of range(0,9)) {
-        number = String(x).repeat(3);
-        if (str.includes(number)) {
-            return number;
-        }
-    }
-    return -1;
-}
+# Case 1
+let friends = ["muzi", "ryan", "frodo", "neo"];
+let gifts = ["muzi frodo", "muzi frodo", "ryan muzi", "ryan muzi", "ryan muzi", "frodo muzi", "frodo ryan", "neo muzi"];
+Answer: 2
 
-let s = prompt('number?','');
-console.log(getNumber(s));
+# Case 2
+let friends = ["joy", "brad", "alessandro", "conan", "david"];
+let gifts = ["alessandro brad", "alessandro joy", "alessandro conan", "david alessandro", "alessandro david"];
+Answer: 4
+
+# Case 3
+let friends = ["a", "b", "c"];
+let gifts = ["a b", "b a", "c a", "a c", "a c", "c a"];
+Answer: 0
 */
 
 function solution(friends, gifts) {
@@ -81,18 +82,7 @@ function solution(friends, gifts) {
 }
 
 
-/* Case 1
-let friends = ["joy", "brad", "alessandro", "conan", "david"];
-let gifts = ["alessandro brad", "alessandro joy", "alessandro conan", "david alessandro", "alessandro david"];
-*/
-
-/* Case 2
-let friends = ["a", "b", "c"];
-let gifts = ["a b", "b a", "c a", "a c", "a c", "c a"];
-*/
-
 let friends = ["muzi", "ryan", "frodo", "neo"];
 let gifts = ["muzi frodo", "muzi frodo", "ryan muzi", "ryan muzi", "ryan muzi", "frodo muzi", "frodo ryan", "neo muzi"];
 
 alert(solution(friends, gifts));
-// solution(gifts);
