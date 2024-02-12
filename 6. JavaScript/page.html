@@ -1,9 +1,32 @@
 <!doctype html>
 <html>
-<head>    
-    <script src="closure.js"></script>
-    <meta charset="UTF-8">    
+
+<head>
+    <script defer src="async.js"></script>
+    <meta charset="UTF-8">
+    <style>
+        .message-ball {
+            font-size: 20px;
+            line-height: 200px;
+            text-align: center;
+        }
+
+        .circle {
+            transition-property: width height top;
+            transition-duration: 2s;
+            border-radius: 50%;
+            background-color: red;
+            position: relative;
+            width: 15rem;
+            height: 15rem;
+            top: 5rem;
+            left: 5rem;
+        }
+    </style>
 </head>
+
 <body style="background-color:rgb(15, 15, 15)">
+    <button class="btn">Click here</button>
 </body>
+
 </html>
