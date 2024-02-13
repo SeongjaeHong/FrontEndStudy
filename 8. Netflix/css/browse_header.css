@@ -1,0 +1,7 @@
+.main-header{
+    position: sticky;
+    top: 0;
+    border-style:solid;
+    transition: background-color;
+    transition-duration: .5s;
+}
