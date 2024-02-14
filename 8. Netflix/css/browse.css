@@ -1,4 +1,5 @@
-@import url("browse_header.css");
+@import "browse_header.css";
+@import "font.css";
 
 body{
     margin: 0;
