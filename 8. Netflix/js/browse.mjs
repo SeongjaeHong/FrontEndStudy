@@ -10,7 +10,8 @@ if (typeof window !== 'undefined'){
     }, true);
 }
 
-browse_body.runContent(document.body.getElementsByClassName('ptrack-container')[0],
+// Play main video
+browse_body.runContent(document.body.getElementsByClassName('billboard-presentation ptrack-container')[0],
     '../files/Bridgerton/Bridgerton_stop.webp',
     '../files/Bridgerton/Bridgerton_video.mp4');
 
