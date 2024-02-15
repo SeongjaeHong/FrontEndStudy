@@ -22,7 +22,8 @@ function setSVG() {
     const svgEls = document.getElementsByTagName('svg');
     for (let svgEl of svgEls) {
         let pathEl = svgEl.getElementsByTagName('path')[0];
-        pathEl.setAttribute('d', getSvgPath(svgEl.classList[0]));
+        let value = svgEl.closest('button').attributes['data-uia'].value
+        pathEl.setAttribute('d', getSvgPath(value));
     }
 }
 
