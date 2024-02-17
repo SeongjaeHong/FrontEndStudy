@@ -1,6 +1,4 @@
 import * as browse_header from './browse_header.js';
-// export {browse_header};
-// export * as browse_header from './browse_header.js';
 import * as browse_body from './browse_body.js';
 import { getSvgPath } from './svg_table.js';
 
@@ -26,8 +24,5 @@ if (typeof window !== 'undefined') {
 browse_body.content_manager.video = '../files/Bridgerton/Bridgerton_video.mp4';
 browse_body.content_manager.img = '../files/Bridgerton/Bridgerton_stop.webp';
 browse_body.content_manager.runContents();
-// browse_body.runContent(document.body.getElementsByClassName('billboard-presentation ptrack-container')[0],
-//     '../files/Bridgerton/Bridgerton_stop.webp',
-//     '../files/Bridgerton/Bridgerton_video.mp4');
 
 setSVG();
