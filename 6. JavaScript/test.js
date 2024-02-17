@@ -12,9 +12,6 @@ function getNumber(str) {
     return -1;
 }
 
-// let s = prompt('number?','');
-// console.log(getNumber(s));
-
 let user = {
     name: "John",
     hi() { console.log(this.name); },
