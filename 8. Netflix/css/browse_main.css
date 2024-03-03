@@ -19,7 +19,6 @@ button.round{
     border: 1px solid white;
     padding: 5px;
     background-color: transparent;
-    
 }
 
 svg{
@@ -42,4 +41,31 @@ svg{
 
 .color-secondary:hover{
     opacity: 0.3;    
+}
+
+main{
+    position: relative;
+    display: flex;
+    height: 80vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+main video{
+    position: absolute;
+}
+
+main .embedded-container{
+    position: absolute;
+    z-index: 1;
+    top: 80%;
+    right: 0;
+    justify-content: flex-end;
+}
+
+main .meta-container{
+    position: absolute;
+    z-index: 1;
+    top: 80%;
+    left: 3%;
 }

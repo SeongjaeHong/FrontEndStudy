@@ -1,6 +1,8 @@
 .main-header{
-    position: sticky;
+    position: fixed;
+    z-index: 1;
     top: 0;
+    width: 100%;
     border-style:solid;
     transition: background-color;
     transition-duration: .5s;
