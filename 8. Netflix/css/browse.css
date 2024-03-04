@@ -2,7 +2,13 @@
 @import "browse_main.css";
 @import "font.css";
 
-body{
+body {
     margin: 0;
 }
 
+@media screen and (min-width: 841px) and (max-width: 1280px) and (orientation: landscape) {
+    body,
+    html {
+        font-size: .85vw;
+    }
+}
