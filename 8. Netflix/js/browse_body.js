@@ -84,7 +84,6 @@ class contentManager {
 
 let embeddedContainerFunc = {
     convertToReplay() {
-        console.log('convertToReplay');
         // Set SVG to replay.
         this.embedded_button.setAttribute('data-uia', 'replay');
         this.embedded_button_svg_path.setAttribute('d', getSvgPath(this.embedded_button.getAttribute('data-uia')));
@@ -97,7 +96,6 @@ let embeddedContainerFunc = {
     },
 
     convertToAudioToggle() {
-        console.log('convertToAudioToggle');
         // Play video.
         this.runContents('video');
 
@@ -113,7 +111,6 @@ let embeddedContainerFunc = {
     },
 
     audioToggle() { // Change audio SVG
-        console.log('audioToggle');
         if (this.embedded_button.getAttribute('data-uia') == 'audio-toggle-unmuted') {
             this.embedded_button.setAttribute('data-uia', 'audio-toggle-muted');
             this.videoEl.muted = true;
