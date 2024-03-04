@@ -9,7 +9,7 @@ function setSVG() {
     const svgEls = document.getElementsByTagName('svg');
     for (let svgEl of svgEls) {
         let pathEl = svgEl.getElementsByTagName('path')[0];
-        let value = svgEl.closest('button').attributes['data-uia'].value
+        let value = svgEl.closest('button').dataset.uia;
         pathEl.setAttribute('d', getSvgPath(value));
     }
 }
