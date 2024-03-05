@@ -23,6 +23,6 @@ if (typeof window !== 'undefined') {
 // Play main video
 browse_body.content_manager.video = '../files/Bridgerton/Bridgerton_video.mp4';
 browse_body.content_manager.img = '../files/Bridgerton/Bridgerton_stop.webp';
-browse_body.content_manager.runContents();
+browse_body.content_manager.runContents('image');
 
 setSVG();
