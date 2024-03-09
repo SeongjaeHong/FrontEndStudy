@@ -28,3 +28,15 @@ window.addEventListener('scroll', () => {
     // Change opacity of Home section
     home_section.style.opacity = 1 - window.scrollY / home_section.offsetHeight;
 });
+
+const arrowEl = document.getElementsByClassName('scroll-up')[0];
+window.addEventListener('scroll', () => {
+    // Show/Hide scroll-up button
+    if (window.scrollY > home_section.offsetHeight / 2) {
+        arrowEl.style.display = 'block';
+    }
+    else {
+        arrowEl.style.display = 'none';
+    }
+    home_section.style.opacity = 1 - window.scrollY / home_section.offsetHeight;
+});

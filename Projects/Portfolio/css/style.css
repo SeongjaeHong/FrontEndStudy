@@ -422,6 +422,7 @@ button:focus {
 
 /* Scroll up */
 .scroll-up {
+    display: none;  /* will be displayed when scroll downs*/
     background-color: var(--color-primary);
     position: fixed;
     bottom: 3rem;
