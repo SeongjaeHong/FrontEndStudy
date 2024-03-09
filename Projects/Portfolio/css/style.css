@@ -413,3 +413,37 @@ button:focus {
     font-weight: bold;
     filter: brightness(70%);
 }
+
+/* Scroll up */
+
+
+/* Footer */
+#contact {
+    background-color: var(--color-primary);
+    color: var(--color-text);
+}
+
+.contact__links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem;
+    font-size: 2rem;
+}
+
+.contact__link:hover {
+    color: var(--color-accent);
+}
+
+.scroll-up {
+    background-color: var(--color-primary);
+    position: fixed;
+    bottom: 3rem;
+    right: 3rem;
+    border-radius: 100%;
+    text-align: center;
+    font-size: 3rem;
+    width: 4.5rem;
+    height: 4.5rem;
+    box-shadow: 5px 5px 0 0 var(--color-accent);
+}
