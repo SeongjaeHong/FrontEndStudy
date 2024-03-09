@@ -176,6 +176,7 @@ button:focus {
 }
 
 .major {
+    width: 30%;
     background-color: var(--color-primary-variant);
     color: var(--color-text);
     border-radius: 1rem;
@@ -203,6 +204,7 @@ button:focus {
 
 .jobs {
     text-align: start;
+    margin: auto;
 }
 
 .job {
@@ -236,24 +238,22 @@ button:focus {
     box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12)
 }
 
+.skills__section {
+    padding: 1rem;
+}
+
 .skills__title {
     color: var(--color-accent);
     margin: 1rem 0;
     font-size: 1.2rem;
 }
 
-.skills__coding {
+#skills__coding {
     grid-row: span 2;
-    padding: 1rem;
     background-color: var(--color-primary);
 }
 
-.skills__tools {
-    padding: 1rem;
-}
-
-.skills__etc {
-    padding: 1rem;
+#skills__etc {
     background-color: var(--color-primary);
     filter: brightness(150%);
 }
@@ -415,7 +415,18 @@ button:focus {
 }
 
 /* Scroll up */
-
+.scroll-up {
+    background-color: var(--color-primary);
+    position: fixed;
+    bottom: 3rem;
+    right: 3rem;
+    border-radius: 100%;
+    text-align: center;
+    font-size: 3rem;
+    width: 4.5rem;
+    height: 4.5rem;
+    box-shadow: 5px 5px 0 0 var(--color-accent);
+}
 
 /* Footer */
 #contact {
@@ -435,15 +446,99 @@ button:focus {
     color: var(--color-accent);
 }
 
-.scroll-up {
-    background-color: var(--color-primary);
-    position: fixed;
-    bottom: 3rem;
-    right: 3rem;
-    border-radius: 100%;
-    text-align: center;
-    font-size: 3rem;
-    width: 4.5rem;
-    height: 4.5rem;
-    box-shadow: 5px 5px 0 0 var(--color-accent);
+@media screen and (max-width: 768px) {
+
+    /* Common */
+    .section {
+        padding: 3rem 2rem;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .description {
+        font-size: 1rem;
+    }
+
+    /* Header */
+    .header {
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .header__menu {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem 4rem;
+        gap: 1rem;
+    }
+
+    .header__nav {
+        width: 100%;
+    }
+
+    /* Home */
+    #home {
+        padding-bottom: 3rem;
+    }
+
+    .home__title {
+        font-size: 2.5rem;
+        margin-bottom: .5rem;
+    }
+
+    /* About */
+    .majors {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .major {
+        width: 50%;
+    }
+
+    .jobs {
+        width: max-content;
+    }
+
+    /* Skills */
+    .skills {
+        grid-template-columns: 1fr;
+    }
+
+    .skills__section {
+        padding-bottom: 3rem;
+    }
+
+    /* Works */
+    .categories {
+        flex-direction: column;
+    }
+
+    .category {
+        width: 100%;
+    }
+
+    .projects {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Testimonial */
+    .testimonial {
+        flex-direction: column;
+    }
+
+    .testimonial:nth-child(even) .testimonial__img {
+        order: 0;
+    }
+
+    /* Scroll up */
+    .scroll-up {
+        width: 3rem;
+        height: 3rem;
+        bottom: 1.5rem;
+        right: 1.5rem;
+        font-size: 2rem;
+    }
 }
