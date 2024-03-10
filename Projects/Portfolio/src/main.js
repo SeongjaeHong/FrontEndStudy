@@ -1,3 +1,5 @@
+'use strict'
+
 // Apply dark mode when scrolloing.
 function headerToggle(scrollY) {
     if (scrollY > header.offsetHeight) {
