@@ -13,7 +13,6 @@ function headerToggle(scrollY) {
 // Apply dark mode when scrolloing.
 const header = document.getElementsByClassName('header')[0];
 window.addEventListener('scroll', () => {
-    console.log('scroll active');
     headerToggle(scrollY);
 });
 
