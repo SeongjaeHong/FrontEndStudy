@@ -145,7 +145,7 @@ button {
 }
 
 .main__meta__title-expansion {
-    
+    margin: 0 1rem;
     color: var(--color-second-text);
 
 }
