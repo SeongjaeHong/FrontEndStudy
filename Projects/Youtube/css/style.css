@@ -138,16 +138,17 @@ button {
     align-items: center;
     justify-content: space-between;
     overflow: hidden;
-}
-
-.main__meta__title {
     font-size: var(--font-large);
 }
 
 .main__meta__title-expansion {
     margin: 0 1rem;
+    font-size: 1rem;
     color: var(--color-second-text);
+}
 
+.main__meta__title-expansion.clicked {
+    transform: rotate(180deg);
 }
 
 .main__meta__info {
