@@ -112,6 +112,8 @@ button {
 }
 .main__video-container {
     width: 100%;
+    position: sticky;
+    top: 0;
 }
 
 .main__video {
@@ -265,6 +267,7 @@ button {
     /* Main */
     .main__video-container {
         text-align: center;
+        background-color: var(--color-primary);
     }
 
     .main__bottom {
