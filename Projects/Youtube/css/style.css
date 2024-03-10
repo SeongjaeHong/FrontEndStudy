@@ -226,14 +226,15 @@ button {
 
 .main__subvideo {
     display: flex;
-    justify-content: space-between;
-    gap: 1rem;
+    /* justify-content: space-between; */
+    /* gap: 1rem; */
     margin-bottom: 1rem;
 }
 
 .main__subvideo__thumbname {
-    width: 50%;
+    flex: 35%;
     height: 10rem;
+    margin-right: 1rem;
 }
 
 .main__subvideo__thumbname__img {
@@ -244,7 +245,7 @@ button {
 
 .main__subvideo__info {
     font-size: var(--font-large);
-    width: 40%;
+    flex: 60%;
 }
 
 .main__subvideo__channel {
@@ -255,6 +256,11 @@ button {
 .main__subvideo__view {
     font-size: var(--font-semi-large);
     color: var(--color-second-text);
+}
+
+.main__subvideo__menu {
+    text-align: center;
+    flex: 5%;
 }
 
 /* Media query */
