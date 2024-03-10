@@ -259,9 +259,14 @@ button {
 @media screen and (min-width: 769px) {
     /* Common */
     .max-container {
-        max-width: 2480px;
+        max-width: 1500px;
     }
+
     /* Main */
+    .main__video-container {
+        text-align: center;
+    }
+
     .main__bottom {
         display: flex;
         justify-content: space-between;
