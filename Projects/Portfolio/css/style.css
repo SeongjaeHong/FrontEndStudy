@@ -55,10 +55,6 @@ button {
     border: 0;
 }
 
-/* button:focus {
-    outline: 1px solid transparent;
-} */
-
 /* Common */
 .section {
     padding: 4rem;
@@ -147,6 +143,7 @@ button {
 
 /* Home */
 #home {
+    position: relative;
     background-color: var(--color-primary);
     color: var(--color-text);
     padding: 7rem 1rem 5rem 1rem;
@@ -186,6 +183,26 @@ button {
     background-color: transparent;
     outline: 2px solid var(--color-accent);
     color: var(--color-text);
+}
+
+.home__divider {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.home__divider svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 60px;
+}
+
+.home__divider .shape-fill {
+    fill: #ffffff;
 }
 
 /* About */
@@ -248,6 +265,7 @@ button {
 #skills {
     background-color: var(--color-primary-variant);
     color: var(--color-text);
+    position: relative;
 }
 
 .skills {
@@ -300,6 +318,27 @@ button {
 .bar__value {
     height: 3px;
     background-color: var(--color-accent);
+}
+
+.skills__divider {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.skills__divider svg {
+    position: relative;
+    display: block;
+    width: calc(118% + 1.3px);
+    height: 80px;
+}
+
+.skills__divider .shape-fill {
+    fill: var(--color-primary);
 }
 
 /* Works */
@@ -460,6 +499,7 @@ button {
 #contact {
     background-color: var(--color-primary);
     color: var(--color-text);
+    position: relative;
 }
 
 .contact__links {
@@ -472,6 +512,26 @@ button {
 
 .contact__link:hover {
     color: var(--color-accent);
+}
+
+.contact__divider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.contact__divider svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 63px;
+}
+
+.contact__divider .shape-fill {
+    fill: #ffffff;
 }
 
 @media screen and (max-width: 768px) {
