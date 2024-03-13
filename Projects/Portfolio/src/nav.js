@@ -19,13 +19,18 @@ function changeNavbyScroll(entries) {
         selectLastOne = idx == sectionIds.length - 1 &&
             entry.isIntersecting &&
             entry.intersectionRatio > 0.9;
-
     }
+
     if (visibles[visibles.length - 1] && selectLastOne) {
         nav = sections[sections.length - 1].id;
     }
     else {
-        nav = sections[visibles.indexOf(true)].id;
+        try{
+            nav = sections[visibles.indexOf(true)].id;
+        }
+        catch{
+            nav = null;
+        }
     }
     if (nav) {
         handleActiveNav(nav);
