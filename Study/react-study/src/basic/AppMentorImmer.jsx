@@ -1,7 +1,6 @@
 import React from "react";
 import "../css/App.css";
 import { useImmer } from "use-immer";
-import personReducer from "../recuder/person-reducer";
 
 export default function AppMentorImmer() {
   const [person, updatePerson] = useImmer(initPerson);
