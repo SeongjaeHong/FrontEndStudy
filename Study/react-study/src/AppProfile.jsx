@@ -1,6 +1,5 @@
 import "./App.css";
 import Profile from "./components/Profile";
-import Counter from "./components/Counter";
 
 function AppProfile() {
   return (
