@@ -1,27 +1,38 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 
 export default function Product() {
   const [products, setProducts] = useState([]);
   const [checked, setChecked] = useState(false);
-  const handleChange = () => setChecked(prev => !prev);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState();
+  const handleChange = () => setChecked((prev) => !prev);
 
-  
   useEffect(() => {
-    fetch(`data/${checked? 'sale_': ''}products.json`)
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("Load data from network");
-        setProducts(data);
-      });
-    return () => {
-      console.log("Clean page");
-    };
+    setLoading(true);
+    setError(undefined);
+
+    fetch(`data/${checked ? "sale_" : ""}products.json`)
+      .then((res) => res.json())
+      .then((data) => setProducts(data))
+      .catch((e) => setError(e.toString()))
+      .finally(() => setLoading(false));
   }, [checked]);
+
+  if (loading) return <p>Loading...</p>;
+  if (error) {
+    setError();
+    return <p>{error}</p>;
+  }
 
   return (
     <div>
-        <input id="checkbox" type="checkbox" value={checked} onChange={handleChange} />
-        <label htmlFor="checkbox">Show Only hot sale</label>
+      <input
+        id="checkbox"
+        type="checkbox"
+        value={checked}
+        onChange={handleChange}
+      />
+      <label htmlFor="checkbox">Show Only hot sale</label>
       <ul>
         {products.map((item) => (
           <li key={item.id}>
