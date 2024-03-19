@@ -1,17 +1,20 @@
 import React, { useState } from "react";
 import AddTodo from "../AddTodo";
+import { v4 as uuidv4 } from "uuid";
 
 export default function Todolist() {
   const [todos, setTodos] = useState([
-    { id: "1", text: "shopping", status: "active" },
-    { id: "2", text: "studying", status: "active" },
+    { id: uuidv4(), text: "shopping", status: "active" },
+    { id: uuidv4(), text: "studying", status: "active" },
   ]);
 
   const handleAdd = (item) => {
     item = item.replace(/\s+/g, "");
     if (item) {
-      let lastid = todos[todos.length - 1].id + 1;
-      setTodos(() => [...todos, { id: lastid, text: item, status: "active" }]);
+      setTodos(() => [
+        ...todos,
+        { id: uuidv4(), text: item, status: "active" },
+      ]);
     }
   };
 
