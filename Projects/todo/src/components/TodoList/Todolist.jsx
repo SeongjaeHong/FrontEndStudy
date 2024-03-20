@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import AddTodo from "./AddTodo";
 import { v4 as uuidv4 } from "uuid";
-
+import AddTodo from "./AddTodo";
 import Todo from "./Todo";
 
-export default function Todolist() {
+export default function Todolist({ filter }) {
   const [todos, setTodos] = useState([
     { id: uuidv4(), text: "shopping", status: "active" },
     { id: uuidv4(), text: "studying", status: "active" },
@@ -30,14 +29,16 @@ export default function Todolist() {
   return (
     <section>
       <ul>
-        {todos.map((todo) => (
-          <Todo
-            key={todo.id}
-            todo={todo}
-            onUpdate={handleUpdate}
-            onDelete={handleDelete}
-          />
-        ))}
+        {todos
+          .filter((todo) => todo.status === filter || filter === "all")
+          .map((todo) => (
+            <Todo
+              key={todo.id}
+              todo={todo}
+              onUpdate={handleUpdate}
+              onDelete={handleDelete}
+            />
+          ))}
       </ul>
       <AddTodo onAdd={handleAdd} />
     </section>
