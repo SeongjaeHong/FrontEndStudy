@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import AddTodo from "./AddTodo";
 import Todo from "./Todo";
+import styles from "./Todolist.module.css";
 
 export default function Todolist({ filter }) {
   const [todos, setTodos] = useState([
@@ -27,8 +28,8 @@ export default function Todolist({ filter }) {
   };
 
   return (
-    <section>
-      <ul>
+    <section className={styles.container}>
+      <ul className={styles.list}>
         {todos
           .filter((todo) => todo.status === filter || filter === "all")
           .map((todo) => (
