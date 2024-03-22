@@ -11,8 +11,3 @@
     flex:1 1 auto;
     overflow-y: scroll;
 }
-
-.darkMode {
-    background-color: rgb(33, 36, 67);
-    color: white;
-}
