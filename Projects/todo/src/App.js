@@ -8,7 +8,7 @@ const filters = ["all", "active", "completed"];
 const key_localStorageFilter = "todoFilter";
 
 export default function App() {
-  const [filter, setFilter] = useState(filters[0]);
+  const [filter, setFilter] = useState(readFilterFromLocalStorage);
   const handleFilter = (filter) => {
     setFilter(filter);
     localStorage.setItem(key_localStorageFilter, filter);
@@ -19,7 +19,7 @@ export default function App() {
       ? localStorage.getItem(key_localStorageFilter)
       : filter;
     setFilter(localStorageFilter);
-  }, []);
+  }, [filter]);
 
   return (
     <DarkModeProvider>
@@ -31,4 +31,10 @@ export default function App() {
       <Todolist filter={filter} />
     </DarkModeProvider>
   );
+}
+
+function readFilterFromLocalStorage() {
+  let filter = localStorage.getItem(key_localStorageFilter);
+  filter = filter ? filter : filters[0];
+  return filter;
 }
