@@ -10,7 +10,7 @@
     padding: .7rem 1rem;
     border: none;
     outline: none;
-    flex: 1 0 auto;
+    flex: 1 1 auto;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
 }
