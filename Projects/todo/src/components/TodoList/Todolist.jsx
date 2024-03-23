@@ -8,10 +8,11 @@ import { DarkModeContext } from "../../context/DarkModeContext";
 const key_todoLocalStorage = "todoList";
 
 export default function Todolist({ filter }) {
-  // if useState already has an initial value,
-  // it doesn't call a function.
+  // if useState already has an initial value, it doesn't call a function by re-render.
   // so, it can prevent useless network traffic.
-  const [todos, setTodos] = useState(() => readTodosFromLocalStorage());
+  // Do: seState(readTodosFromLocalStorage);
+  // Don't: seState(readTodosFromLocalStorage());
+  const [todos, setTodos] = useState(readTodosFromLocalStorage);
 
   const handleUpdate = (updated) =>
     setTodos(todos.map((todo) => (todo.id === updated.id ? updated : todo)));
