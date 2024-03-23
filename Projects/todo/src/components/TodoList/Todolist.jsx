@@ -10,8 +10,8 @@ const key_todoLocalStorage = "todoList";
 export default function Todolist({ filter }) {
   // if useState already has an initial value, it doesn't call a function by re-render.
   // so, it can prevent useless network traffic.
-  // Do: seState(readTodosFromLocalStorage);
-  // Don't: seState(readTodosFromLocalStorage());
+  // Do: useState(readTodosFromLocalStorage);
+  // Don't: useState(readTodosFromLocalStorage());
   const [todos, setTodos] = useState(readTodosFromLocalStorage);
 
   const handleUpdate = (updated) =>
