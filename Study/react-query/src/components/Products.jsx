@@ -7,9 +7,11 @@ export default function Products() {
   const { data: products, isLoading } = useQuery({
     queryKey: ["products", checked],
     queryFn: async () => {
+      console.log("fetching");
       const res = await fetch(`data/${checked ? "sale_" : ""}products.json`);
       return res.json();
     },
+    staleTime: 1000 * 60 * 5, // Save cache for 5 minutes
   });
 
   if (isLoading) {
