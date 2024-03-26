@@ -1,0 +1,862 @@
+{
+    "kind": "youtube#searchListResponse",
+    "etag": "NFFUwzTtgP2Bn5wlKMyQBO-L6t0",
+    "nextPageToken": "CBkQAA",
+    "regionCode": "US",
+    "pageInfo": {
+        "totalResults": 1000000,
+        "resultsPerPage": 25
+    },
+    "items": [
+        {
+            "kind": "youtube#searchResult",
+            "etag": "8MrMeqv04DFxZqumuTQPY19fAQQ",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "vTrLEhFObCc"
+            },
+            "snippet": {
+                "publishedAt": "2024-03-12T14:00:06Z",
+                "channelId": "UCZszCX_TfylksyABpzXiRtg",
+                "title": "Soothe Dog&#39;s Anxiety: 24 Hours of Dog TV - Anti Anxiety &amp; Boredom Busting Videos with Music for Dogs",
+                "description": "Soothe Dog's Anxiety: 24 Hours of Dog TV - Anti Anxiety & Boredom Busting Videos with Music for Dogs Looking for a way to keep ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/vTrLEhFObCc/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/vTrLEhFObCc/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/vTrLEhFObCc/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Great Music for DOGS",
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-03-12T14:00:06Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "ckQTIHEk6VZoA6lLhjXByB1QoHE",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "KNpjC-sUcg0"
+            },
+            "snippet": {
+                "publishedAt": "2023-07-29T03:24:37Z",
+                "channelId": "UCcGHrLbRifyyI-DDRc3iQtQ",
+                "title": "Bridget likes food slightly more 😂 #dogs #englishmastiff #husky",
+                "description": "",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/KNpjC-sUcg0/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/KNpjC-sUcg0/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/KNpjC-sUcg0/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "TheGoodHype",
+                "liveBroadcastContent": "none",
+                "publishTime": "2023-07-29T03:24:37Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "n41nNNMbnhPyAbDQTOXmeneifCU",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "vzV6cCXEfYU"
+            },
+            "snippet": {
+                "publishedAt": "2023-06-27T21:39:55Z",
+                "channelId": "UC4xHcg7a7hMoHgXerjRKiyA",
+                "title": "This dog is so smart ❤️🥹 #shorts",
+                "description": "Every time this guy gets off his trampoline, he briefly touches the metal rail knowing that he might get a small shock. His dog ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/vzV6cCXEfYU/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/vzV6cCXEfYU/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/vzV6cCXEfYU/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Brennan Rogers",
+                "liveBroadcastContent": "none",
+                "publishTime": "2023-06-27T21:39:55Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "ICwGGRQFWVTu_miWCHQc3rcpsYA",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "fnMxnAL9MNA"
+            },
+            "snippet": {
+                "publishedAt": "2024-02-03T22:53:54Z",
+                "channelId": "UCgeXW6vjC7o6lTKqvx7F1Gw",
+                "title": "He taught his dogs how to drive ❤️",
+                "description": "After teaching his dog how to drive, this clever man doesn't need to drive his car himself anymore!! Sometimes his dog even ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/fnMxnAL9MNA/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/fnMxnAL9MNA/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/fnMxnAL9MNA/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Carlv.",
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-02-03T22:53:54Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "Czp0qQh57MeagGPCaOyyTqDFGgM",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "NU1DXw297KA"
+            },
+            "snippet": {
+                "publishedAt": "2023-06-13T13:05:12Z",
+                "channelId": "UCQ1O4XEUMO3_dYEYRvGQPDg",
+                "title": "I am your doggy, you listen to me! 😏 #puppy #goldenretriever #dogs #puppies #dogshorts #dog",
+                "description": "Original TikTok audio by: destinyschi.",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/NU1DXw297KA/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/NU1DXw297KA/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/NU1DXw297KA/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Daisy & Maple",
+                "liveBroadcastContent": "none",
+                "publishTime": "2023-06-13T13:05:12Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "kETU0a4ZkjjPRTqBbFBJAG7JzHc",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "vOThRCun5GY"
+            },
+            "snippet": {
+                "publishedAt": "2023-06-19T12:45:48Z",
+                "channelId": "UCMp-0bU-PA7BNNR-zIvEydA",
+                "title": "I found a dog outside my gym 😳",
+                "description": "",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/vOThRCun5GY/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/vOThRCun5GY/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/vOThRCun5GY/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Noel Deyzel",
+                "liveBroadcastContent": "none",
+                "publishTime": "2023-06-19T12:45:48Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "t2nF-8rr3PUZZlFrni-jA9IjPik",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "_FTd-Sx7Orc"
+            },
+            "snippet": {
+                "publishedAt": "2023-05-25T00:13:23Z",
+                "channelId": "UC4xHcg7a7hMoHgXerjRKiyA",
+                "title": "The way she immediately froze 😂❤️ #shorts",
+                "description": "When she was playing hide and seek with her dog, the pup went to go hide in it's favourite hiding spot, but didn't get there in time ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/_FTd-Sx7Orc/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/_FTd-Sx7Orc/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/_FTd-Sx7Orc/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Brennan Rogers",
+                "liveBroadcastContent": "none",
+                "publishTime": "2023-05-25T00:13:23Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "SKXJPnD-RAw5OThUfbGeprBqCC0",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "XOgA01_nqYQ"
+            },
+            "snippet": {
+                "publishedAt": "2024-03-26T12:54:46Z",
+                "channelId": "UC_0X20s5VVUQJllk_S3FCPQ",
+                "title": "[LIVE] Dog Music🎵 Relaxing Sounds for Dogs with Anxiety🐶 Separation anxiety relief music💖Dog Calm🐶 2",
+                "description": "[LIVE] Dog Music  Relaxing Calming Music for Dogs  Separation anxiety relief music  Dog Sleep Music     Hello The Healing ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/XOgA01_nqYQ/default_live.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/XOgA01_nqYQ/mqdefault_live.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/XOgA01_nqYQ/hqdefault_live.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "HealingMate - Dog Music",
+                "liveBroadcastContent": "live",
+                "publishTime": "2024-03-26T12:54:46Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "aje7rgiH_piwtPD9IJ-HQkWjGV4",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "4j_z3Fkutf4"
+            },
+            "snippet": {
+                "publishedAt": "2024-03-24T13:49:09Z",
+                "channelId": "UCW07BekfFnomC0ws_f6XyiQ",
+                "title": "Una donna adotta un cane randagio  #dogs  #viral  #shortsvideo    #shorts    #youtubeshorts",
+                "description": "Una donna adotta un cane randagio #dogs #viral #shortsvideo #shorts #youtubeshorts.",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/4j_z3Fkutf4/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/4j_z3Fkutf4/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/4j_z3Fkutf4/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Il Cane Il Mio Amico",
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-03-24T13:49:09Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "0ewpqEbTckGi_rBLnM5MQ2hnGHU",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "OVwuPittcS8"
+            },
+            "snippet": {
+                "publishedAt": "2023-05-29T03:50:10Z",
+                "channelId": "UCctDQlR34dhq8p3vSKfh8dg",
+                "title": "Corn-flavored slippers! #funny #nico #funnydog #dog #funnycute",
+                "description": "",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/OVwuPittcS8/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/OVwuPittcS8/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/OVwuPittcS8/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Nico_thepomeranian",
+                "liveBroadcastContent": "none",
+                "publishTime": "2023-05-29T03:50:10Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "3UhqT1upvmCwFENrgaS3LV0tO1A",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "8JPsPK8wrzw"
+            },
+            "snippet": {
+                "publishedAt": "2024-01-15T03:06:50Z",
+                "channelId": "UCtBLBiEGfvSBu-kpvhCq_Rw",
+                "title": "I felt bad for the dog 😢 #shorts #viral",
+                "description": "Movie Title: Miruthan (2016) Disclaimer: Any footage in this video has only been used to communicate a message ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/8JPsPK8wrzw/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/8JPsPK8wrzw/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/8JPsPK8wrzw/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Zayn",
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-01-15T03:06:50Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "sSJ5wLl1Q2YuHLg_zw5H2byIkGA",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "ItCGnmhEl_k"
+            },
+            "snippet": {
+                "publishedAt": "2023-11-28T13:43:00Z",
+                "channelId": "UCgm9WPYFcviZyyCUzEXfR2Q",
+                "title": "Didn’t know dogs could do this",
+                "description": "",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/ItCGnmhEl_k/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/ItCGnmhEl_k/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/ItCGnmhEl_k/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Ellie Golden Life",
+                "liveBroadcastContent": "none",
+                "publishTime": "2023-11-28T13:43:00Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "zNvAmDL5x8YCPga_kdCODoj5pZw",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "PZnPjTLmIik"
+            },
+            "snippet": {
+                "publishedAt": "2024-03-22T14:00:28Z",
+                "channelId": "UC0iiLOT3Jnefq_5Ohk2fJhg",
+                "title": "Funny Dogs And Cats Videos 2024 😅 - Best Funniest Animal Videos Of The week #15",
+                "description": "Funniest Dog And Cat Videos - Best Funny Animals Videos 2023   Welcome to the funniest Animals planet! Today we have a ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/PZnPjTLmIik/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/PZnPjTLmIik/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/PZnPjTLmIik/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Koen Funniest planet",
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-03-22T14:00:28Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "k_yy2oJhVpWN8jfTS-KL688uUMU",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "-C_8fe0TnjE"
+            },
+            "snippet": {
+                "publishedAt": "2024-03-25T12:39:45Z",
+                "channelId": "UC_0X20s5VVUQJllk_S3FCPQ",
+                "title": "[LIVE] Dog Music🎵 Calming Music for Dogs🐶Soothing Sleep Music💖Anti Separation anxiety Relief  2-1",
+                "description": "[LIVE] Dog Music   Calming Music for Dogs  Soothing Sleep Music  Anti Separation anxiety Relief 2-1 Hello The Healing Mate ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/-C_8fe0TnjE/default_live.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/-C_8fe0TnjE/mqdefault_live.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/-C_8fe0TnjE/hqdefault_live.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "HealingMate - Dog Music",
+                "liveBroadcastContent": "live",
+                "publishTime": "2024-03-25T12:39:45Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "Lov1ClTUU6BmzOVmmqM0w-MngrE",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "4QA30qkRYy8"
+            },
+            "snippet": {
+                "publishedAt": "2016-01-08T16:52:44Z",
+                "channelId": "UCO6LS_5W7vqG9mALDNzSFug",
+                "title": "Dogs",
+                "description": "Provided to YouTube by Pink Floyd Dogs · Pink Floyd Animals ℗ Pink Floyd Records Released on: 1997-01-21 Auto-generated ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/4QA30qkRYy8/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/4QA30qkRYy8/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/4QA30qkRYy8/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Pink Floyd - Topic",
+                "liveBroadcastContent": "none",
+                "publishTime": "2016-01-08T16:52:44Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "rIE3mfnfIfVkqZv3mQzFiAvDHXo",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "aLxujpoxzA0"
+            },
+            "snippet": {
+                "publishedAt": "2023-05-01T09:21:47Z",
+                "channelId": "UCctDQlR34dhq8p3vSKfh8dg",
+                "title": "Nico:Am i superman? #dog #nico #cutedoggies #funny #cute",
+                "description": "",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/aLxujpoxzA0/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/aLxujpoxzA0/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/aLxujpoxzA0/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Nico_thepomeranian",
+                "liveBroadcastContent": "none",
+                "publishTime": "2023-05-01T09:21:47Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "sttIaMzg8dgwlsOCTBzgbfnXeTE",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "c0UWhMr2vI8"
+            },
+            "snippet": {
+                "publishedAt": "2023-08-10T05:00:15Z",
+                "channelId": "UCPIvT-zcQl2H0vabdXJGcpg",
+                "title": "Funny Little Puppy Gets Angry at His Own Hiccups",
+                "description": "This lil guy can't stand his own hiccups! #Dogs #CuteDogs #Puppies #DogParents #FunnyDogs ✨    Subscribe to The ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/c0UWhMr2vI8/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/c0UWhMr2vI8/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/c0UWhMr2vI8/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "The Pet Collective",
+                "liveBroadcastContent": "none",
+                "publishTime": "2023-08-10T05:00:15Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "pV9riBz4NubztJPWXjl_pTf41Wg",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "lwsIGvy7Q0Y"
+            },
+            "snippet": {
+                "publishedAt": "2023-06-11T17:06:19Z",
+                "channelId": "UCArKkcFUWuss_bFbw2ut1JA",
+                "title": "My frenchie had puppies - the amazing journey of a pregnant dog #pets #puppy #puppies #dogs #shorts",
+                "description": "",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/lwsIGvy7Q0Y/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/lwsIGvy7Q0Y/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/lwsIGvy7Q0Y/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Vixbull Frenchies",
+                "liveBroadcastContent": "none",
+                "publishTime": "2023-06-11T17:06:19Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "EjdWIEKxcOO0BZDmhF3iJXhwDUs",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "DN0kf4oG7vk"
+            },
+            "snippet": {
+                "publishedAt": "2023-05-14T20:13:48Z",
+                "channelId": "UCxYrYfulA8BFmgvdBF6Yr7g",
+                "title": "Adorable Dog Cannot Stop Tackling His Dad #dogsofyoutube #dog #funnyanimals",
+                "description": "",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/DN0kf4oG7vk/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/DN0kf4oG7vk/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/DN0kf4oG7vk/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Hugo The Malamute",
+                "liveBroadcastContent": "none",
+                "publishTime": "2023-05-14T20:13:48Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "AukUc74T1XlthrA294oIGGfjlPY",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "DjvewJbACVI"
+            },
+            "snippet": {
+                "publishedAt": "2023-05-18T21:18:23Z",
+                "channelId": "UCpuT8AlP9P9EgW_pZ0_xInQ",
+                "title": "Saving a dog that was abandoned and hurt ❤️",
+                "description": "",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/DjvewJbACVI/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/DjvewJbACVI/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/DjvewJbACVI/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Dylan Anderson",
+                "liveBroadcastContent": "none",
+                "publishTime": "2023-05-18T21:18:23Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "UmY-cUZu_AoZfMXhUq2txNurVnU",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "Q-Bsxs8rRmc"
+            },
+            "snippet": {
+                "publishedAt": "2023-02-18T10:05:37Z",
+                "channelId": "UCctDQlR34dhq8p3vSKfh8dg",
+                "title": "What&#39;s your favorite fruit?#cute #dog #funny #nico #smartnico",
+                "description": "",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/Q-Bsxs8rRmc/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/Q-Bsxs8rRmc/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/Q-Bsxs8rRmc/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Nico_thepomeranian",
+                "liveBroadcastContent": "none",
+                "publishTime": "2023-02-18T10:05:37Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "6nvMJ_zPUHR6bZCwclcHRJsMn_k",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "dOQrBBWAlxc"
+            },
+            "snippet": {
+                "publishedAt": "2023-04-26T23:20:34Z",
+                "channelId": "UCMSIDB9jvhqBKby2qk6E4VA",
+                "title": "🗣 Mashup 105 #voiceover #voiceovers #dog #dogs #canine #canines #funny #shorts",
+                "description": "Voiceover by Dusty  Dubs.",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/dOQrBBWAlxc/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/dOQrBBWAlxc/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/dOQrBBWAlxc/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Dusty Douglas",
+                "liveBroadcastContent": "none",
+                "publishTime": "2023-04-26T23:20:34Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "PnKhoDJgEcV7HCz9JTYUCYhNETg",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "_mKAqrA3weA"
+            },
+            "snippet": {
+                "publishedAt": "2024-02-25T16:00:19Z",
+                "channelId": "UCPIvT-zcQl2H0vabdXJGcpg",
+                "title": "CLASSIC Dog Videos! 🐶 🤣 | 2 HOURS of FUNNY Clips",
+                "description": "Your dogs deserve to chill out to a great video too every once in a while ✨    Subscribe to The Scoop for our most ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/_mKAqrA3weA/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/_mKAqrA3weA/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/_mKAqrA3weA/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "The Pet Collective",
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-02-25T16:00:19Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "SrwUL8tbqiPKbQl-fnJ7te31vrc",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "-WowH0liGfE"
+            },
+            "snippet": {
+                "publishedAt": "2023-01-08T20:17:39Z",
+                "channelId": "UC2BDs0pu-C1A4POY0g9rZxw",
+                "title": "Your daily dose of funny cute dogs #relaxmydog #funny #dogs #funnydogs #compilation",
+                "description": "",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/-WowH0liGfE/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/-WowH0liGfE/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/-WowH0liGfE/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Relax My Dog - Relaxing Music for Dogs",
+                "liveBroadcastContent": "none",
+                "publishTime": "2023-01-08T20:17:39Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "oe0dqDhewGIT9gYlJkW00HhPscc",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "fdLa2AvRIdA"
+            },
+            "snippet": {
+                "publishedAt": "2021-12-16T04:22:52Z",
+                "channelId": "UCvotrIocqw4vDmVemWf8qBg",
+                "title": "Dog Owner ABUSES his Shiba Inu",
+                "description": "",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/fdLa2AvRIdA/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/fdLa2AvRIdA/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/fdLa2AvRIdA/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "KyloTheDoge",
+                "liveBroadcastContent": "none",
+                "publishTime": "2021-12-16T04:22:52Z"
+            }
+        }
+    ]
+}
