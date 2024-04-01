@@ -7,7 +7,11 @@ import { useYoutubeAPI } from "../context/YoutubeApiContext.jsx";
 export default function Videos() {
   const { keyword } = useParams();
   const { youtube } = useYoutubeAPI();
-  const { data, error, isLoading } = useQuery({
+  const {
+    data: videos,
+    error,
+    isLoading,
+  } = useQuery({
     queryKey: ["videos", keyword],
     queryFn: () => {
       return youtube.search(keyword);
@@ -20,13 +24,13 @@ export default function Videos() {
       <section>Videos {keyword ? `🔍${keyword}` : "🔥"}</section>
       <section>
         {isLoading && <p>Loading</p>}
-        {error & <p>Error occurred</p>}
-        {data && (
+        {error && <p>Error occurred</p>}
+        {videos && (
           <ul>
-            {data.map((result) => (
+            {videos.map((video) => (
               <VideoCard
-                key={result.id}
-                video={result}
+                videoKey={video.id}
+                video={video.snippet}
               />
             ))}
           </ul>
