@@ -7,10 +7,9 @@ import { Axios } from "axios";
 export default function Videos() {
   const { keyword } = useParams();
   const searchVideos = () => {
-    let items = Axios.get(
+    return Axios.get(
       `/data/${keyword ? "search_list" : "popular_list"}.json`
     ).then((response) => response.data.items);
-    return items;
   };
   const { data, error, isLoading } = useQuery({
     queryKey: ["videos", keyword],
