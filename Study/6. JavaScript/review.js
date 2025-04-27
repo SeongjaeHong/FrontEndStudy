@@ -1,6 +1,17 @@
-let title, width, height;
+class Animal {
 
-// 에러가 발생하지 않습니다.
-({title, width, height} = {title: "Menu", width: 200, height: 100});
+  constructor(name) {
+    this.name = name;
+  }
 
-alert( title ); // Menu
+}
+
+class Rabbit extends Animal {
+  constructor(name) {
+    super(name);
+    this.created = Date.now();
+  }
+}
+
+let rabbit = new Rabbit("White Rabbit"); // 잘 동작합니다.
+alert(rabbit.name); // White Rabbit
