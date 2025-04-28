@@ -1,17 +1,11 @@
-class Animal {
-
-  constructor(name) {
-    this.name = name;
+async function loadJson(url) {
+  let response = await fetch(url);
+  if (response.status == 200) {
+    let json = response.json(); // (3)
+    return json;
   }
 
+  throw new Error(response.status);
 }
 
-class Rabbit extends Animal {
-  constructor(name) {
-    super(name);
-    this.created = Date.now();
-  }
-}
-
-let rabbit = new Rabbit("White Rabbit"); // 잘 동작합니다.
-alert(rabbit.name); // White Rabbit
+loadJson("no-such-user.json").catch(alert); // Error: 404
