@@ -25,51 +25,10 @@
   </head>
 
   <body style="background-color: rgb(15, 15, 15)">
-    <div id="funcButtons">
-      <button data-action="saveItem">저장</button>
-      <button data-action="deleteItem">삭제</button>
-    </div>
-
-    <button data-toggle-form="subscribe-mail">구독 폼 보여주기</button>
-    <form id="subscribe-mail">
-      <p style="color: white">주소: <input type="email" /></p>
-    </form>
-
-    <script>
-      class Menu {
-        constructor(element) {
-          this._element = element;
-          element.onclick = this.onclick.bind(this);
-          console.dir(this);
-        }
-
-        saveItem() {
-          alert("Save item");
-        }
-
-        deleteItem() {
-          alert("Delete item");
-        }
-
-        onclick(event) {
-          let action = event.target.dataset.action;
-          if (action) {
-            this[action]();
-          }
-        }
-      }
-
-      new Menu(funcButtons);
-
-      document.addEventListener("click", (event) => {
-        let id = event.target.dataset.toggleForm;
-        if (!id) return;
-
-        console.dir(this);
-
-        let form = document.getElementById(id);
-        form.hidden = !form.hidden;
-      });
-    </script>
+    <p id="contents" style="color: white">
+      How about to read <a href="https://www.naver.com">Wikipedia</a> or visit
+      <a href="https://www.google.com/">W3.org</a> and learn about modern
+      standards?
+    </p>
   </body>
 </html>
