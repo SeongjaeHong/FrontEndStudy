@@ -1,32 +1,75 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <script defer src="review.js"></script>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <style>
-        .message-ball {
-            font-size: 20px;
-            line-height: 200px;
-            text-align: center;
-        }
+      .message-ball {
+        font-size: 20px;
+        line-height: 200px;
+        text-align: center;
+      }
 
-        .circle {
-            transition-property: width height top;
-            transition-duration: 2s;
-            border-radius: 50%;
-            background-color: red;
-            position: relative;
-            width: 15rem;
-            height: 15rem;
-            top: 5rem;
-            left: 5rem;
-        }
+      .circle {
+        transition-property: width height top;
+        transition-duration: 2s;
+        border-radius: 50%;
+        background-color: red;
+        position: relative;
+        width: 15rem;
+        height: 15rem;
+        top: 5rem;
+        left: 5rem;
+      }
     </style>
-</head>
+  </head>
 
-<body style="background-color:rgb(15, 15, 15)">
-    <button class="btn">Click here</button>
-</body>
+  <body style="background-color: rgb(15, 15, 15)">
+    <div id="funcButtons">
+      <button data-action="saveItem">저장</button>
+      <button data-action="deleteItem">삭제</button>
+    </div>
 
+    <button data-toggle-form="subscribe-mail">구독 폼 보여주기</button>
+    <form id="subscribe-mail">
+      <p style="color: white">주소: <input type="email" /></p>
+    </form>
+
+    <script>
+      class Menu {
+        constructor(element) {
+          this._element = element;
+          element.onclick = this.onclick.bind(this);
+          console.dir(this);
+        }
+
+        saveItem() {
+          alert("Save item");
+        }
+
+        deleteItem() {
+          alert("Delete item");
+        }
+
+        onclick(event) {
+          let action = event.target.dataset.action;
+          if (action) {
+            this[action]();
+          }
+        }
+      }
+
+      new Menu(funcButtons);
+
+      document.addEventListener("click", (event) => {
+        let id = event.target.dataset.toggleForm;
+        if (!id) return;
+
+        console.dir(this);
+
+        let form = document.getElementById(id);
+        form.hidden = !form.hidden;
+      });
+    </script>
+  </body>
 </html>
