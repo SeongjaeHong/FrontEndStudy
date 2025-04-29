@@ -1,15 +1,10 @@
-let elem = document.getElementById("contents");
+let largeImg = document.getElementById("largeImg");
+let thumbs = document.getElementById("thumbs");
 
-elem.addEventListener("click", function (event) {
-  function handleLink(href) {
-    let isLeaving = confirm(`Leave for ${href}?`);
-    if (!isLeaving) {
-      event.preventDefault();
-    }
-  }
-
+thumbs.onclick = function (event) {
   let target = event.target.closest("a");
-  if (target && this.contains(target)) {
-    handleLink(target.getAttribute("href"));
+  if (target && thumbs.contains(target)) {
+    largeImg.setAttribute("src", target.getAttribute("href"));
+    event.preventDefault();
   }
-});
+};
