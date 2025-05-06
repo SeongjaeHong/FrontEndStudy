@@ -1,5 +1,5 @@
 import { createRoot } from 'react-dom/client';
 import './index.css';
-import AppForm from './AppForm';
+import AppWrap from './AppWrap';
 
-createRoot(document.getElementById('root')).render(<AppForm />);
+createRoot(document.getElementById('root')).render(<AppWrap />);
