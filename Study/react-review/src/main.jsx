@@ -1,5 +1,5 @@
 import { createRoot } from 'react-dom/client';
 import './index.css';
-import AppCounter from './AppCounter';
+import AppForm from './AppForm';
 
-createRoot(document.getElementById('root')).render(<AppCounter />);
+createRoot(document.getElementById('root')).render(<AppForm />);
