@@ -1,5 +1,5 @@
 import { createRoot } from 'react-dom/client';
 import './index.css';
-import AppWrap from './AppWrap';
+import AppTheme from './AppTheme';
 
-createRoot(document.getElementById('root')).render(<AppWrap />);
+createRoot(document.getElementById('root')).render(<AppTheme />);
