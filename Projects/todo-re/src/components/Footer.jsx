@@ -9,7 +9,10 @@ export default function Footer({ setTodos }) {
   const addTodoItemHandler = (e) => {
     e.preventDefault();
     const value = inputRef.current.value.trim();
-    if (!value) return;
+    if (!value) {
+      inputRef.current.value = '';
+      return;
+    }
     setTodos((prevTodos) => [
       ...prevTodos,
       { key: uuidv4(), job: value, status: 'active' },
