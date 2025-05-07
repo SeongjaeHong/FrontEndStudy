@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import './css/footer.css';
 import { useTheme } from '../theme/ThemeContext';
+import { v4 as uuidv4 } from 'uuid';
 
 export default function Footer({ setTodos }) {
   const theme = useTheme();
@@ -11,7 +12,7 @@ export default function Footer({ setTodos }) {
     if (!value) return;
     setTodos((prevTodos) => [
       ...prevTodos,
-      { key: Date.now(), job: value, status: 'active' },
+      { key: uuidv4(), job: value, status: 'active' },
     ]);
     inputRef.current.value = '';
   };
