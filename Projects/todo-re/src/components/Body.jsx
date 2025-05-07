@@ -7,7 +7,11 @@ export default function Body() {
   const theme = useTheme();
   const [todos, setTodos] = useState([
     { key: 1, job: "job1", status: "active" },
-    { key: 2, job: "job2", status: "completed" },
+    {
+      key: 2,
+      job: "job2 which is very long name so it can very likely not be displayed in one line, so it should be managed somehow",
+      status: "completed",
+    },
     { key: 3, job: "job3", status: "active" },
   ]);
 
@@ -36,7 +40,14 @@ export default function Body() {
             onChange={() => handleTodoCheck(todo.key)}
             checked={todo.status === "completed"}
           />
-          <label htmlFor={todo.job}>{todo.job}</label>
+          <label
+            className={
+              "overflow-hidden text-ellipsis whitespace-nowrap " + todo.status
+            }
+            htmlFor={todo.job}
+          >
+            {todo.job}
+          </label>
           <div className="bin">
             <ImBin2 onClick={() => handleDeleteItem(todo.key)} />
           </div>

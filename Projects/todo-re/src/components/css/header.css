@@ -3,9 +3,12 @@
 header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
   color: var(--main-focus-color);
   background-color: var(--light-mode-color);
+  border-radius: 10px 10px 0px 0px;
+  padding: 0.5em 1em 0.5em 1em;
 }
 
 header > .theme-mark {
@@ -18,10 +21,6 @@ header.dark {
 
 header.dark > .theme-mark {
   color: var(--main-focus-color);
-}
-
-.tab-pannel {
-  margin: auto 1rem;
 }
 
 .tab {
