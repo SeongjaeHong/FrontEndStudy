@@ -2,6 +2,7 @@ footer {
   background-color: var(--light-mode-color);
   width: 100%;
   padding: 1em 0.5em 1em 0.5em;
+  border-radius: 0 0 10px 10px;
 }
 
 footer.dark {
