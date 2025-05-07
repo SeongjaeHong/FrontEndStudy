@@ -7,7 +7,7 @@ main {
   height: 100%;
   min-height: 250px;
   padding-top: 1em;
-  max-height: 50vh;
+  max-height: 70vh;
   overflow-y: auto;
 }
 
