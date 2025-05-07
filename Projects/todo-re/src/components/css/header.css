@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  color: var(--main-focus-color);
+  background-color: var(--light-mode-color);
+}
+
+header > .theme-mark {
+  color: black;
+}
+
+header.dark {
+  background-color: var(--dark-mode-color);
+}
+
+header.dark > .theme-mark {
+  color: var(--main-focus-color);
+}
+
+.tab-pannel {
+  margin: auto 1rem;
+}
+
+.tab {
+  margin: auto 0.3rem;
+  color: var(--main-unfocused-color);
+}
+
+.tab.current {
+  color: var(--main-focus-color);
+  text-decoration: underline;
+}
+
+.tab:hover {
+  color: var(--main-focus-color);
+}

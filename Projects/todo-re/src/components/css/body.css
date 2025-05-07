@@ -1,0 +1,15 @@
+main {
+  background-color: var(--light-mode-body-color);
+  color: black;
+}
+
+.bin {
+  display: inline-block;
+  background-color: gray;
+  border-radius: 50%;
+}
+
+main.dark {
+  background-color: var(--dark-mode-body-color);
+  color: white;
+}

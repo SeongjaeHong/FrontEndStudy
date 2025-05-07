@@ -1,0 +1,20 @@
+:root {
+  --dark-mode-color: rgb(23, 15, 53);
+  --dark-mode-body-color: rgb(37, 52, 95);
+  --light-mode-color: rgb(197, 197, 197);
+  --light-mode-body-color: #fff;
+  --main-focus-color: rgb(255, 150, 0);
+  --main-unfocused-color: rgb(170, 99, 0);
+  background-color: rgb(41, 55, 73);
+}
+
+#root {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#todoApp {
+  padding: min(5em, 10%);
+  width: 400px;
+}

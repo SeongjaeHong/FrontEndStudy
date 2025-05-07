@@ -1,0 +1,25 @@
+footer {
+  display: flex;
+  background-color: var(--light-mode-color);
+}
+
+footer.dark {
+  background-color: var(--dark-mode-color);
+}
+
+.AddTodo {
+  color: black;
+}
+
+.AddTodo > input {
+  background-color: white;
+}
+
+.AddTodo > input::placeholder {
+  color: gray;
+}
+
+footer > button {
+  background-color: var(--main-focus-color);
+  color: white;
+}
