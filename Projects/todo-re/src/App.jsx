@@ -1,14 +1,17 @@
 import './App.css';
 import Body from './components/Body';
 import Header from './components/header';
-import { ThemeProvider } from './theme/ThemeContext';
+import { ThemeProvider } from './contexts/ThemeContext';
+import FilterProvider from './contexts/Filtercontext';
 
 function App() {
   return (
     <ThemeProvider>
       <div id='todoApp'>
-        <Header />
-        <Body />
+        <FilterProvider>
+          <Header />
+          <Body />
+        </FilterProvider>
       </div>
     </ThemeProvider>
   );

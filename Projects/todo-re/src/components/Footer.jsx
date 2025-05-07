@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import './css/footer.css';
-import { useTheme } from '../theme/ThemeContext';
+import { useTheme } from '../contexts/ThemeContext';
 import { v4 as uuidv4 } from 'uuid';
 
 export default function Footer({ setTodos }) {
