@@ -19,7 +19,7 @@ export default function SearchHeader() {
             </span>
             <span id='letter'>Youtube</span>
           </Link>
-          <Form className='search' method='get' action={'/results/'}>
+          <Form className='search' method='get' action={'/results'}>
             <input
               type='text'
               name='search_keyword'
