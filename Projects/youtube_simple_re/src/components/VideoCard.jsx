@@ -1,6 +1,12 @@
+import { Link } from 'react-router';
+
 function VideoCard({ video }) {
+  const videoId = video.id?.videoId ? video.id.videoId : video.id;
   return (
-    <div className='video-card'>
+    <Link
+      to={{ pathname: '/watch', search: '?v=' + videoId }}
+      className='video-card'
+    >
       <div className='video-thumbnail'>
         <img src={video.snippet.thumbnails.default.url} />
       </div>
@@ -11,7 +17,7 @@ function VideoCard({ video }) {
           {ConvertTime(video.snippet.publishedAt)}
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
 

@@ -1,7 +1,11 @@
 import React from 'react';
+import { useSearchParams } from 'react-router';
 
 function VideoDetail() {
-  return <div>Video Detail</div>;
+  const [searchParams] = useSearchParams();
+  const videoId = searchParams.get('v');
+
+  return <div>Video Detail: {videoId}</div>;
 }
 
 export default VideoDetail;
