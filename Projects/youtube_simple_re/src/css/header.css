@@ -1,0 +1,67 @@
+@import 'tailwindcss';
+:root {
+  background-color: #1f1f1f;
+  font-size: 1.5em;
+  --phone-width: 430px;
+  --max-side-margin: calc(clamp(0, 15%, calc(var(--phone-width) * 0.15)) * 1px);
+}
+
+.main-root {
+  display: flex;
+  justify-content: center;
+}
+
+.main-frame {
+  width: 70%;
+  max-width: 1000px;
+  padding-top: 5px;
+}
+
+header {
+  display: flex;
+  border-bottom: solid;
+  border-color: rgb(85, 85, 85);
+  border-width: 0 0 2px 0;
+}
+
+#letter {
+  font-weight: bold;
+  color: white;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+  /* background-color: green; */
+}
+
+header .logo > span {
+  margin: 5px;
+}
+
+.search {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 5px;
+  /* background-color: yellowgreen; */
+}
+
+.search-tab {
+  background-color: white;
+  border-radius: 10px;
+  width: 50%;
+  border-radius: 5px 0 0 5px;
+}
+
+#search-button {
+  background-color: gray;
+  color: white;
+  border-radius: 0 5px 5px 0;
+}
+
+@media screen and (max-width: 450px) {
+  .main-frame {
+    width: 100%;
+  }
+}
