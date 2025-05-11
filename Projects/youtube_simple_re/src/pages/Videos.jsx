@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import VideoCard from '../components/VideoCard';
 import { useSearchParams } from 'react-router';
-import axios from 'axios';
+import FakeYoutube from '../api/fakeYoutube';
 
 function Videos() {
   const [searchParams] = useSearchParams();
@@ -11,14 +11,8 @@ function Videos() {
     error,
     data: videos,
   } = useQuery({
-    queryKey: ['videos', keyword || 'popular'],
-    queryFn: async () => {
-      const key = keyword ? 'videos.json' : 'popular.json';
-      return axios
-        .get('/videos/' + key)
-        .then((res) => res.data.items)
-        .catch((e) => console.log(`error: ${e}`));
-    },
+    queryKey: ['videos', keyword],
+    queryFn: () => new FakeYoutube().search(keyword),
     staleTime: Infinity,
   });
 
@@ -29,8 +23,7 @@ function Videos() {
       {videos && (
         <ul>
           {videos.map((video) => {
-            const key = video.id?.videoId ? video.id.videoId : video.id;
-            return <VideoCard video={video} key={key} />;
+            return <VideoCard video={video} key={video.id} />;
           })}
         </ul>
       )}
