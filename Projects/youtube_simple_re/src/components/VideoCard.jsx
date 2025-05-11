@@ -24,7 +24,8 @@ function VideoCard({ video }) {
 export default VideoCard;
 
 function ConvertTime(createdTime) {
-  const timeDiff = Math.trunc((Date.now() - createdTime) / 1000);
+  const _createdTime = new Date(createdTime);
+  const timeDiff = Math.trunc((Date.now() - _createdTime.getTime()) / 1000);
   const min = Math.trunc(timeDiff / 60);
   const hour = Math.trunc(min / 60);
   const day = Math.trunc(hour / 24);
