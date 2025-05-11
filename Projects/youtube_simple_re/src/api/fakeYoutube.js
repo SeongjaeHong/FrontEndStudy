@@ -1,14 +1,14 @@
 import axios from 'axios';
-import Youtube from './youtube';
+import YoutubeClient from './YoutubeClient';
 
-export default class FakeYoutube extends Youtube {
+export default class FakeYoutube extends YoutubeClient {
   constructor() {
     super();
     this.mockKeywordFile = '/videos/videos.json';
     this.smockPopularFile = '/videos/popular.json';
   }
 
-  async #searchByKeyword(keyword) {
+  async searchByKeyword(keyword) {
     return axios
       .get(this.mockKeywordFile)
       .then((res) => res.data.items)
@@ -16,7 +16,7 @@ export default class FakeYoutube extends Youtube {
       .catch((e) => console.log(`error: ${e}`));
   }
 
-  async #mostPopular() {
+  async mostPopular() {
     return axios
       .get(this.smockPopularFile)
       .then((res) => res.data.items)
