@@ -2,6 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import VideoCard from '../components/VideoCard';
 import { useSearchParams } from 'react-router';
 import { useYoutubeApi } from '../context/YoutubeApiContext';
+import { v4 as uuidv4 } from 'uuid';
 
 function Videos() {
   const [searchParams] = useSearchParams();
@@ -24,6 +25,10 @@ function Videos() {
       {videos && (
         <ul>
           {videos.map((video) => {
+            if (!video.id) {
+              // Some ids are undefined.
+              video.id = uuidv4();
+            }
             return <VideoCard video={video} key={video.id} />;
           })}
         </ul>
