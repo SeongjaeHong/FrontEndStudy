@@ -10,31 +10,25 @@ export default function SearchHeader() {
   useEffect(() => setText(keyword || ''), [keyword]);
 
   return (
-    <section className='main-root'>
-      <section className='main-frame'>
-        <header>
-          <Link className='logo' to={'/'}>
-            <span id='icon' className='text-red-600'>
-              <BsYoutube />
-            </span>
-            <span id='letter'>Youtube</span>
-          </Link>
-          <Form className='search' method='get' action={'/results'}>
-            <input
-              type='text'
-              name='search_keyword'
-              className='search-tab'
-              id='search-tab'
-              placeholder='검색'
-              value={text}
-              onChange={(e) => setText(e.target.value)}
-            />
-            <button id='search-button'>
-              <BsSearch />
-            </button>
-          </Form>
-        </header>
-      </section>
-    </section>
+    <header>
+      <Link className='logo' to={'/'}>
+        <BsYoutube className='text-brand text-4xl' />
+        <h3 className='font-bold ml-2 text-3xl'>Youtube</h3>
+      </Link>
+      <Form className='search' method='get' action={'/results'}>
+        <input
+          type='text'
+          name='search_keyword'
+          className='search-tab'
+          id='search-tab'
+          placeholder='검색'
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+        />
+        <button className='search-button'>
+          <BsSearch />
+        </button>
+      </Form>
+    </header>
   );
 }
