@@ -13,7 +13,6 @@ export default class Youtube {
   }
 
   async #searchByKeyword(keyword) {
-    console.log('Search ' + keyword);
     return this.httpClient
       .get('/search', {
         params: {
@@ -27,7 +26,6 @@ export default class Youtube {
   }
 
   async #mostPopular() {
-    console.log('Search popular lists');
     return this.httpClient
       .get('/videos', {
         params: {
