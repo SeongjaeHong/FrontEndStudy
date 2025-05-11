@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import VideoCard from '../components/VideoCard';
 import { useSearchParams } from 'react-router';
+import axios from 'axios';
 
 function Videos() {
   const [searchParams] = useSearchParams();
@@ -13,9 +14,9 @@ function Videos() {
     queryKey: ['videos', keyword || 'popular'],
     queryFn: async () => {
       const key = keyword ? 'videos.json' : 'popular.json';
-      return fetch('/videos/' + key)
-        .then((res) => res.json())
-        .then((data) => data.items)
+      return axios
+        .get('/videos/' + key)
+        .then((res) => res.data.items)
         .catch((e) => console.log(`error: ${e}`));
     },
     staleTime: Infinity,
