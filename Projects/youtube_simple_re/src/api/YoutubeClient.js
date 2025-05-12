@@ -1,9 +1,9 @@
 export default class YoutubeClient {
-  searchByKeyword(keyword) {
+  searchVideoByKeyword(keyword) {
     throw new Error('searchByKeyword() 함수가 구현되지 않았습니다.');
   }
 
-  mostPopular() {
+  searchPopularVideo() {
     throw new Error('mostPopular() 함수가 구현되지 않았습니다.');
   }
 }

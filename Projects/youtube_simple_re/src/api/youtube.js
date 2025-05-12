@@ -10,7 +10,7 @@ export default class Youtube extends YoutubeClient {
     });
   }
 
-  async searchByKeyword(keyword) {
+  async searchVideoByKeyword(keyword) {
     return this.httpClient
       .get('/search', {
         params: {
@@ -24,7 +24,7 @@ export default class Youtube extends YoutubeClient {
       .catch((e) => console.log(`error: ${e}`));
   }
 
-  async mostPopular() {
+  async searchPopularVideo() {
     return this.httpClient
       .get('/videos', {
         params: {

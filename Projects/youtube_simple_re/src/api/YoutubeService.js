@@ -5,7 +5,7 @@ export default class YoutubeService {
 
   async search(keyword) {
     return keyword
-      ? this.client.searchByKeyword(keyword)
-      : this.client.mostPopular();
+      ? this.client.searchVideoByKeyword(keyword)
+      : this.client.searchPopularVideo();
   }
 }

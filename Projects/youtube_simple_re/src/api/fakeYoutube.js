@@ -8,7 +8,7 @@ export default class FakeYoutube extends YoutubeClient {
     this.smockPopularFile = '/videos/popular.json';
   }
 
-  async searchByKeyword(keyword) {
+  async searchVideoByKeyword(keyword) {
     return axios
       .get(this.mockKeywordFile)
       .then((res) => res.data.items)
@@ -16,7 +16,7 @@ export default class FakeYoutube extends YoutubeClient {
       .catch((e) => console.log(`error: ${e}`));
   }
 
-  async mostPopular() {
+  async searchPopularVideo() {
     return axios
       .get(this.smockPopularFile)
       .then((res) => res.data.items)
