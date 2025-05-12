@@ -9,10 +9,8 @@
 }
 
 .video-info p {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
   @apply text-xs text-zinc-400;
+  @apply line-clamp-2;
 }
 
 .video-thumbnail img {
