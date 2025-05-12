@@ -2,19 +2,20 @@ import { Link } from 'react-router';
 import './css/VideoCard.css';
 
 function VideoCard({ video }) {
-  const videoId = video.id?.videoId ? video.id.videoId : video.id;
+  const { channelTitle, publishedAt, title, thumbnails } = video.snippet;
+  const videoId = video.id;
   return (
     <Link
       to={{ pathname: '/watch', search: '?v=' + videoId }}
       className='video-card'
     >
       <div className='video-thumbnail'>
-        <img src={video.snippet.thumbnails.high.url} />
+        <img src={thumbnails.high.url} alt={title} />
       </div>
       <div className='video-info'>
-        <p id='video-title'>{video.snippet.title}</p>
-        <p id='video-channel'>{video.snippet.channelTitle}</p>
-        <p id='video-created'>{ConvertTime(video.snippet.publishedAt)}</p>
+        <p id='video-title'>{title}</p>
+        <p id='video-channel'>{channelTitle}</p>
+        <p id='video-created'>{ConvertTime(publishedAt)}</p>
       </div>
     </Link>
   );
