@@ -8,14 +8,12 @@ function VideoCard({ video }) {
       className='video-card'
     >
       <div className='video-thumbnail'>
-        <img src={video.snippet.thumbnails.default.url} />
+        <img src={video.snippet.thumbnails.high.url} />
       </div>
       <div className='video-info'>
-        <div className='video-title'>{video.snippet.title}</div>
-        <div className='video-channel'>{video.snippet.channelTitle}</div>
-        <div className='video-created'>
-          {ConvertTime(video.snippet.publishedAt)}
-        </div>
+        <p id='video-title'>{video.snippet.title}</p>
+        <p id='video-channel'>{video.snippet.channelTitle}</p>
+        <p id='video-created'>{ConvertTime(video.snippet.publishedAt)}</p>
       </div>
     </Link>
   );
