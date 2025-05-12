@@ -1,4 +1,5 @@
 import { Link } from 'react-router';
+import './css/VideoCard.css';
 
 function VideoCard({ video }) {
   const videoId = video.id?.videoId ? video.id.videoId : video.id;

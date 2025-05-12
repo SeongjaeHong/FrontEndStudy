@@ -1,0 +1,27 @@
+@import 'tailwindcss';
+
+.video-card {
+  display: block;
+}
+
+.video-info {
+  margin-top: 8px;
+}
+
+.video-info p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  @apply text-xs text-zinc-400;
+}
+
+.video-thumbnail img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+#video-title {
+  @apply text-sm text-zinc-100;
+}

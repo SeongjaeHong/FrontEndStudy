@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import '../css/header.css';
+import './css/header.css';
 import { BsYoutube, BsSearch } from 'react-icons/bs';
 import { Form, Link, useSearchParams } from 'react-router';
 
