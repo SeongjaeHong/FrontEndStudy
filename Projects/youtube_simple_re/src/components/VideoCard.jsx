@@ -6,7 +6,7 @@ function VideoCard({ video }) {
   const videoId = video.id;
   return (
     <Link
-      to={{ pathname: '/watch', search: '?v=' + videoId }}
+      to={{ pathname: '/watch', search: 'v=' + videoId }}
       className='video-card'
     >
       <div className='video-thumbnail'>
