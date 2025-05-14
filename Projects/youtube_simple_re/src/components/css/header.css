@@ -2,7 +2,7 @@
 
 header {
   display: flex;
-  width: 90%;
+  width: 100%;
   @apply text-2xl;
   @apply border-b border-zinc-600;
   @apply mb-4 p-4;
@@ -33,10 +33,4 @@ header .logo {
 .search-button:hover {
   cursor: pointer;
   @apply bg-zinc-600;
-}
-
-@media screen and (max-width: 450px) {
-  header {
-    width: 100%;
-  }
 }
