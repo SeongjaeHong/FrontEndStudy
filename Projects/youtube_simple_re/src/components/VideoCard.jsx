@@ -1,5 +1,6 @@
 import { Link } from 'react-router';
 import './css/VideoCard.css';
+import { useRef, useState } from 'react';
 
 function VideoCard({ video, relatedVideos }) {
   const {
@@ -11,6 +12,22 @@ function VideoCard({ video, relatedVideos }) {
     thumbnails,
   } = video.snippet;
   const videoId = video.id;
+  const [isHovered, setIsHovered] = useState(false);
+  const hoverTimeoutRef = useRef(null);
+
+  const handleMouseEnter = () => {
+    hoverTimeoutRef.current = setTimeout(() => {
+      setIsHovered(true);
+    }, 100);
+  };
+  const handleMouseLeave = () => {
+    if (hoverTimeoutRef.current) {
+      clearTimeout(hoverTimeoutRef.current);
+      hoverTimeoutRef.current = null;
+    }
+    setIsHovered(false);
+  };
+
   return (
     <Link
       to={{
@@ -20,8 +37,22 @@ function VideoCard({ video, relatedVideos }) {
       state={{ channelId, description, relatedVideos }}
       className='video-card'
     >
-      <div className='video-thumbnail'>
-        <img src={thumbnails.high.url} alt={title} />
+      <div
+        className='video-thumbnail'
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
+        {!isHovered && <img src={thumbnails.high.url} alt={title} />}
+        {isHovered && (
+          <iframe
+            src={
+              'https://www.youtube.com/embed/' +
+              videoId +
+              '?autoplay=1&mute=1&controls=0&rel=0'
+            }
+            allow='autoplay;'
+          ></iframe>
+        )}
       </div>
       <div className='video-info'>
         <p id='video-title'>{title}</p>
