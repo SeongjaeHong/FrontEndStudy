@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useLocation, useSearchParams } from 'react-router';
 import { useYoutubeApi } from '../context/YoutubeApiContext';
 import { useQuery } from '@tanstack/react-query';
@@ -11,8 +11,6 @@ function VideoDetail() {
   const location = useLocation();
   const youtube = useYoutubeApi();
   const { channelId, description, relatedVideos } = location.state;
-  // const { relChannelTitle, relPublishedAt, relTitle, relThumbnails } =
-  //   relatedVideos.snippet;
   const {
     error,
     isFetching,
@@ -22,6 +20,10 @@ function VideoDetail() {
     queryFn: () => youtube.searchChannel(channelId),
     staleTime: 5 * 60 * 1000,
   });
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [videoId]);
 
   return (
     <section className='column'>
@@ -46,13 +48,18 @@ function VideoDetail() {
         </section>
       </main>
       <aside>
-        {relatedVideos.map((video) => (
-          <VideoCard
-            video={video}
-            relatedVideos={relatedVideos}
-            key={video.id}
-          />
-        ))}
+        {relatedVideos.map((video) => {
+          if (video.id === videoId) {
+            return null;
+          }
+          return (
+            <VideoCard
+              video={video}
+              relatedVideos={relatedVideos}
+              key={video.id}
+            />
+          );
+        })}
       </aside>
     </section>
   );
