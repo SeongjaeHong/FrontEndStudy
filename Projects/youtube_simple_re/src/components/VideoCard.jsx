@@ -73,6 +73,7 @@ function VideoCard({ video, relatedVideos, mousePositionRef }) {
               '?autoplay=1&mute=1&controls=0&rel=0'
             }
             allow='autoplay;'
+            style={{ pointerEvents: 'none' }}
           ></iframe>
         )}
       </div>
