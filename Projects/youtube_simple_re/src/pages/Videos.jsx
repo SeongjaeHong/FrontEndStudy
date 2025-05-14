@@ -25,10 +25,8 @@ function Videos() {
     const handleMouseMove = (e) => {
       mousePositionRef.current = { x: e.clientX, y: e.clientY };
     };
-    console.log('Set mousemove event on window');
     window.addEventListener('mousemove', handleMouseMove);
     return () => {
-      console.log('Remove mousemove event from window');
       window.removeEventListener('mousemove', handleMouseMove);
     };
   }, []);
