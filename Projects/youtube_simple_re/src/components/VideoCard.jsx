@@ -2,7 +2,7 @@ import { Link } from 'react-router';
 import './css/VideoCard.css';
 import { useRef, useState } from 'react';
 
-function VideoCard({ video, relatedVideos }) {
+function VideoCard({ video, relatedVideos, mousePositionRef }) {
   const {
     channelId,
     channelTitle,
@@ -14,19 +14,44 @@ function VideoCard({ video, relatedVideos }) {
   const videoId = video.id;
   const [isHovered, setIsHovered] = useState(false);
   const hoverTimeoutRef = useRef(null);
+  const monitorHoverRef = useRef(null);
+  const containerRef = useRef(null);
 
   const handleMouseEnter = () => {
     hoverTimeoutRef.current = setTimeout(() => {
       setIsHovered(true);
     }, 100);
+
+    monitorHoverRef.current = setInterval(() => {
+      const el = containerRef.current;
+      const { x, y } = mousePositionRef.current;
+      const elUnderMouse = document.elementFromPoint(x, y);
+      if (el && !el.contains(elUnderMouse)) {
+        handleMouseLeave();
+      }
+    }, 100);
   };
+
   const handleMouseLeave = () => {
     if (hoverTimeoutRef.current) {
       clearTimeout(hoverTimeoutRef.current);
       hoverTimeoutRef.current = null;
     }
+
+    if (monitorHoverRef.current) {
+      clearTimeout(monitorHoverRef.current);
+      monitorHoverRef.current = null;
+    }
     setIsHovered(false);
   };
+
+  const eventHandlers = mousePositionRef
+    ? {
+        ref: containerRef,
+        onMouseEnter: handleMouseEnter,
+        onMouseLeave: handleMouseLeave,
+      }
+    : {};
 
   return (
     <Link
@@ -36,12 +61,9 @@ function VideoCard({ video, relatedVideos }) {
       }}
       state={{ channelId, description, relatedVideos }}
       className='video-card'
+      {...eventHandlers}
     >
-      <div
-        className='video-thumbnail'
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-      >
+      <div className='video-thumbnail'>
         {!isHovered && <img src={thumbnails.high.url} alt={title} />}
         {isHovered && (
           <iframe

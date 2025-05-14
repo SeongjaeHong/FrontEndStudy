@@ -3,6 +3,7 @@ import VideoCard from '../components/VideoCard';
 import { useSearchParams } from 'react-router';
 import { useYoutubeApi } from '../context/YoutubeApiContext';
 import './css/videos.css';
+import { useEffect, useRef } from 'react';
 
 function Videos() {
   const [searchParams] = useSearchParams();
@@ -18,6 +19,20 @@ function Videos() {
     staleTime: Infinity,
   });
 
+  const mousePositionRef = useRef({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      mousePositionRef.current = { x: e.clientX, y: e.clientY };
+    };
+    console.log('Set mousemove event on window');
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => {
+      console.log('Remove mousemove event from window');
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
+
   return (
     <section className='videos'>
       {isFetching && <p>Loading...</p>}
@@ -30,7 +45,14 @@ function Videos() {
               return null;
             }
             return (
-              <VideoCard video={video} relatedVideos={videos} key={video.id} />
+              <div key={video.id}>
+                <VideoCard
+                  video={video}
+                  relatedVideos={videos}
+                  mousePositionRef={mousePositionRef}
+                  key={video.id}
+                />
+              </div>
             );
           })}
         </ul>
