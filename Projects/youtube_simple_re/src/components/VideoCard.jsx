@@ -1,12 +1,23 @@
 import { Link } from 'react-router';
 import './css/VideoCard.css';
 
-function VideoCard({ video }) {
-  const { channelTitle, publishedAt, title, thumbnails } = video.snippet;
+function VideoCard({ video, relatedVideos }) {
+  const {
+    channelId,
+    channelTitle,
+    description,
+    publishedAt,
+    title,
+    thumbnails,
+  } = video.snippet;
   const videoId = video.id;
   return (
     <Link
-      to={{ pathname: '/watch', search: 'v=' + videoId }}
+      to={{
+        pathname: '/watch',
+        search: 'v=' + videoId,
+      }}
+      state={{ channelId, description, relatedVideos }}
       className='video-card'
     >
       <div className='video-thumbnail'>
