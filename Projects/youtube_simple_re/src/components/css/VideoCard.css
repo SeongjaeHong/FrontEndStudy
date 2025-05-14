@@ -2,14 +2,16 @@
 
 .video-card {
   display: block;
+  margin-bottom: 1rem;
 }
 
 .video-info {
-  margin-top: 8px;
+  padding-right: 1.5rem;
 }
 
 .video-info p {
-  @apply text-xs text-zinc-400;
+  font-size: 0.75rem;
+  @apply text-zinc-400;
   @apply line-clamp-2;
 }
 
@@ -17,9 +19,11 @@
   width: 100%;
   aspect-ratio: 16 / 9;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 #video-title {
-  @apply text-sm text-zinc-100;
+  font-size: 0.875rem;
+  @apply text-zinc-100;
 }
