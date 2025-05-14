@@ -36,4 +36,14 @@ export default class Youtube extends YoutubeClient {
       .then((res) => res.data.items)
       .catch((e) => console.log(`error: ${e}`));
   }
+  async searchChannelById(channelId) {
+    return this.httpClient
+      .get('/channels', {
+        part: 'snippet',
+        id: channelId,
+      })
+      .then((res) => res.data.items)
+      .then((items) => items[0])
+      .catch((e) => console.log(`error: ${e}`));
+  }
 }

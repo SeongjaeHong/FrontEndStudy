@@ -3,9 +3,13 @@ export default class YoutubeService {
     this.client = client;
   }
 
-  async search(keyword) {
+  async searchVideo(keyword) {
     return keyword
       ? this.client.searchVideoByKeyword(keyword)
       : this.client.searchPopularVideo();
+  }
+
+  async searchChannel(channelId) {
+    return this.client.searchChannelById(channelId);
   }
 }

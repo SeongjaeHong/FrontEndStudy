@@ -14,7 +14,7 @@ function Videos() {
     data: videos,
   } = useQuery({
     queryKey: ['videos', keyword],
-    queryFn: () => youtube.search(keyword),
+    queryFn: () => youtube.searchVideo(keyword),
     staleTime: Infinity,
   });
 
@@ -29,7 +29,9 @@ function Videos() {
               // Some ids are undefined.
               return null;
             }
-            return <VideoCard video={video} key={video.id} />;
+            return (
+              <VideoCard video={video} relatedVideos={videos} key={video.id} />
+            );
           })}
         </ul>
       )}
