@@ -1,16 +1,17 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLocation, useSearchParams } from 'react-router';
 import { useYoutubeApi } from '../context/YoutubeApiContext';
 import { useQuery } from '@tanstack/react-query';
 import './css/VideoDetail.css';
 import VideoCard from '../components/VideoCard';
+import VideoDescription from '../components/VideoDescription';
 
 function VideoDetail() {
   const [searchParams] = useSearchParams();
   const videoId = searchParams.get('v');
   const location = useLocation();
   const youtube = useYoutubeApi();
-  const { channelId, description, relatedVideos } = location.state;
+  const { channelId, relatedVideos } = location.state;
   const {
     error,
     isFetching,
@@ -43,9 +44,7 @@ function VideoDetail() {
             </>
           )}
         </section>
-        <section className='description'>
-          <span>{description}</span>
-        </section>
+        <VideoDescription videoId={videoId} />
       </main>
       <aside>
         {relatedVideos.map((video) => {

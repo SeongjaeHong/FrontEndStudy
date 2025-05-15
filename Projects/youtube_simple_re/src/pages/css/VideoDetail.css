@@ -38,16 +38,9 @@ main {
   width: 2rem;
 }
 
-.description {
-  padding: 0.7rem;
-  font-size: 0.7em;
-  @apply bg-zinc-600 rounded-lg;
-}
-
 aside {
   padding-top: 1.5rem;
   padding-right: 1.5rem;
-  /* max-width: 26.625rem; */
 }
 
 aside .video-card {
