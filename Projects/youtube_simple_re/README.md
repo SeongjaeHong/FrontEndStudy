@@ -1,12 +1,13 @@
-# React + Vite
+# Youtube 따라하기 (2025. 5. 11 ~ 2025. 5.15)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### **[메인 화면]**
 
-Currently, two official plugins are available:
+![main page](https://github.com/SeongjaeHong/FrontEndStudy/blob/master/Projects/youtube_simple_re/images/main.png?raw=true)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### **[검색 화면]**
 
-## Expanding the ESLint configuration
+![main page](https://github.com/SeongjaeHong/FrontEndStudy/blob/master/Projects/youtube_simple_re/images/search.png?raw=true)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### **[영상 화면]**
+
+![main page](https://github.com/SeongjaeHong/FrontEndStudy/blob/master/Projects/youtube_simple_re/images/detail.png?raw=true)
