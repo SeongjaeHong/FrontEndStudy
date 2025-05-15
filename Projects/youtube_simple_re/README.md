@@ -6,8 +6,8 @@
 
 ### **[검색 화면]**
 
-![main page](https://github.com/SeongjaeHong/FrontEndStudy/blob/master/Projects/youtube_simple_re/images/search.png?raw=true)
+![search page](https://github.com/SeongjaeHong/FrontEndStudy/blob/master/Projects/youtube_simple_re/images/search.png?raw=true)
 
 ### **[영상 화면]**
 
-![main page](https://github.com/SeongjaeHong/FrontEndStudy/blob/master/Projects/youtube_simple_re/images/detail.png?raw=true)
+![video page](https://github.com/SeongjaeHong/FrontEndStudy/blob/master/Projects/youtube_simple_re/images/video.png?raw=true)
