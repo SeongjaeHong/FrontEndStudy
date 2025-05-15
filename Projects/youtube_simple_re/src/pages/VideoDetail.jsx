@@ -30,7 +30,13 @@ function VideoDetail() {
     <section className='column'>
       <main>
         <section className='video-frame'>
-          <iframe src={'https://www.youtube.com/embed/' + videoId}></iframe>
+          <iframe
+            src={'https://www.youtube.com/embed/' + videoId}
+            frameborder='0'
+            allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+            referrerpolicy='strict-origin-when-cross-origin'
+            allowfullscreen
+          ></iframe>
         </section>
 
         <section className='channel-info'>
