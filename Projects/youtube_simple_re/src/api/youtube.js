@@ -39,8 +39,7 @@ export default class Youtube extends YoutubeClient {
   async searchChannelById(channelId) {
     return this.httpClient
       .get('/channels', {
-        part: 'snippet',
-        id: channelId,
+        params: { part: 'snippet', id: channelId },
       })
       .then((res) => res.data.items)
       .then((items) => items[0])
