@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useLocation, useSearchParams } from 'react-router';
 import { useYoutubeApi } from '../context/YoutubeApiContext';
 import { useQuery } from '@tanstack/react-query';
@@ -11,7 +11,7 @@ function VideoDetail() {
   const videoId = searchParams.get('v');
   const location = useLocation();
   const youtube = useYoutubeApi();
-  const { channelId, relatedVideos } = location.state;
+  const { channelId, relatedVideos, title } = location.state;
   const {
     error,
     isFetching,
@@ -33,6 +33,7 @@ function VideoDetail() {
           <iframe
             src={'https://www.youtube.com/embed/' + videoId}
             frameborder='0'
+            title={title}
             allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
             referrerpolicy='strict-origin-when-cross-origin'
             allowfullscreen

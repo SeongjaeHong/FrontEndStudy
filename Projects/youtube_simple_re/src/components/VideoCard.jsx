@@ -59,7 +59,7 @@ function VideoCard({ video, relatedVideos, mousePositionRef }) {
         pathname: '/watch',
         search: 'v=' + videoId,
       }}
-      state={{ channelId, description, relatedVideos }}
+      state={{ channelId, description, relatedVideos, title }}
       className='video-card'
       {...eventHandlers}
     >
@@ -73,6 +73,7 @@ function VideoCard({ video, relatedVideos, mousePositionRef }) {
               '?autoplay=1&mute=1&controls=0&rel=0'
             }
             allow='autoplay;'
+            title={title}
             style={{ pointerEvents: 'none' }}
           ></iframe>
         )}
