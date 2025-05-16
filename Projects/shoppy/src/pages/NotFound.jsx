@@ -7,8 +7,9 @@ export default function NotFound() {
   const timeCountRef = useRef(null);
   const navigate = useNavigate();
   const redirectHandle = () => {
+    clearInterval(timeCountRef.current);
     timeCountRef.current = null;
-    navigate('/', { replace: true });
+    navigate('/');
   };
 
   timeCountRef.current = setInterval(() => {
