@@ -1,0 +1,23 @@
+@import 'tailwindcss';
+
+.item-list {
+  margin-top: 3rem;
+  width: 80%;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.item-list div {
+  @apply grid grid-cols-100;
+}
+
+.item-list .item {
+  font-size: 0.7rem;
+  @apply border-t border-zinc-500;
+}
+
+.item-list span {
+  display: flex;
+  align-items: center;
+  @apply border-r border-zinc-500;
+}
