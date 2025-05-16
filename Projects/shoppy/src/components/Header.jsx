@@ -1,7 +1,10 @@
 import './css/Header.css';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons/faCartShopping';
+import { faPenToSquare } from '@fortawesome/free-solid-svg-icons/faPenToSquare';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useNavigate } from 'react-router';
 export default function Header() {
+  const navigate = useNavigate();
   return (
     <header>
       <a className='site-logo' href='/'>
@@ -13,9 +16,12 @@ export default function Header() {
         <h1>Shoppy</h1>
       </a>
       <section className='user-functions'>
-        <div className='cart'>
+        <button className='cart'>
           <FontAwesomeIcon icon={faCartShopping} />
-        </div>
+        </button>
+        <button className='edit-item' onClick={() => navigate('edit')}>
+          <FontAwesomeIcon icon={faPenToSquare} />
+        </button>
         <div className='login'>
           <button>Login</button>
         </div>

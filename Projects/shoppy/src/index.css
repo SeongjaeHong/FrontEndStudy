@@ -1,5 +1,11 @@
 @import 'tailwindcss';
 
 #root {
+  min-width: 260px;
+  margin: 0 10vw;
   @apply flex flex-col items-center;
+}
+
+button {
+  cursor: pointer;
 }
