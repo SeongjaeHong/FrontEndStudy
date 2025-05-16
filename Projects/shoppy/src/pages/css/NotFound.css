@@ -1,0 +1,14 @@
+@import 'tailwindcss';
+
+.wrong-page {
+  width: 100vw;
+  height: 100vh;
+  font-weight: 700;
+  @apply flex flex-col items-center justify-center;
+  @apply text-amber-800 bg-amber-800/10;
+}
+
+.wrong-page img {
+  margin-top: 1rem;
+  width: 20rem;
+}
