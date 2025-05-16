@@ -4,7 +4,7 @@
 header {
   font-family: 'Cormorant Garamond';
   font-weight: 700;
-  width: 80%;
+  width: 100%;
   font-size: 1.2rem;
   @apply flex justify-between items-center;
 }
