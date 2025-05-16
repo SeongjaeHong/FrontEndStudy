@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap');
+@import 'tailwindcss';
+
+header {
+  font-family: 'Cormorant Garamond';
+  font-weight: 700;
+  width: 80%;
+  font-size: 1.2rem;
+  @apply flex justify-between items-center;
+}
+
+.site-logo {
+  @apply text-amber-800;
+  @apply flex items-center;
+}
+
+.logo-img {
+  height: 2.5rem;
+}
+
+.user-functions {
+  @apply flex items-center gap-5;
+}
+
+.login button {
+  padding: 2px;
+  @apply text-stone-50 bg-rose-500;
+}
