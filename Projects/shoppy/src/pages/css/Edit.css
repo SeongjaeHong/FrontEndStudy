@@ -4,20 +4,29 @@
   margin-top: 3rem;
   width: 80%;
   font-size: 0.9rem;
-  text-align: center;
+}
+
+.tab span:hover {
+  @apply bg-zinc-100;
 }
 
 .item-list div {
   @apply grid grid-cols-100;
 }
 
+.item-list .item:hover {
+  @apply bg-zinc-100;
+}
+
+.item-list .tab {
+  font-weight: bold;
+}
+
 .item-list .item {
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   @apply border-t border-zinc-500;
 }
 
 .item-list span {
-  display: flex;
-  align-items: center;
-  @apply border-r border-zinc-500;
+  @apply flex justify-center items-center;
 }
