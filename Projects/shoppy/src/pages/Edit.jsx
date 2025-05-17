@@ -24,27 +24,26 @@ export default function Edit() {
       <span>Check?:{isAnyChecked ? 'true' : 'false'}</span>
       <section className='item-list'>
         <div className='tab'>
-          <span className='col-span-2'></span>
-          <span className='col-span-4'>번호</span>
-          <span className='col-span-10'>카테고리</span>
-          <span className='col-span-70'>상품명</span>
-          <span className='col-span-4'>성별</span>
-          <span className='col-span-10'>가격</span>
+          <span className='checkbox'></span>
+          <span className='index'>번호</span>
+          <span className='category'>카테고리</span>
+          <span className='name'>상품명</span>
+          <span className='sex'>성별</span>
+          <span className='price'>가격</span>
         </div>
         {mockItemList.map((mockItem, index) => (
           <div className='item' key={index}>
-            <span className='col-span-2'>
+            <span className='checkbox'>
               <input
                 type='checkbox'
-                className='checkbox'
                 onClick={() => checkboxChangeHandle(index)}
               />
             </span>
-            <span className='col-span-4'>{index + 1}</span>
-            <span className='col-span-10'>{mockItem[0]}</span>
-            <span className='col-span-70'>{mockItem[1]}</span>
-            <span className='col-span-4'>{mockItem[2]}</span>
-            <span className='col-span-10'>{mockItem[3]}</span>
+            <span className='index'>{index + 1}</span>
+            <span className='category'>{mockItem[0]}</span>
+            <span className='name'>{mockItem[1]}</span>
+            <span className='sex'>{mockItem[2]}</span>
+            <span className='price'>{mockItem[3]}</span>
           </div>
         ))}
       </section>

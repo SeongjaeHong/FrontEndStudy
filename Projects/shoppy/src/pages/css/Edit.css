@@ -1,32 +1,42 @@
 @import 'tailwindcss';
 
 .item-list {
-  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: max-content max-content max-content 1fr max-content max-content;
   width: 80%;
+  margin-top: 3rem;
   font-size: 0.9rem;
 }
 
-.tab span:hover {
-  @apply bg-zinc-100;
+.item-list span {
+  padding: 0 0.5rem;
 }
 
-.item-list div {
-  @apply grid grid-cols-100;
-}
-
-.item-list .item:hover {
+.item-list .tab span:hover {
   @apply bg-zinc-100;
 }
 
 .item-list .tab {
+  display: contents;
   font-weight: bold;
 }
 
 .item-list .item {
+  display: contents;
   font-size: 0.8rem;
   @apply border-t border-zinc-500;
 }
 
+.item-list .item:hover span {
+  @apply bg-zinc-100;
+}
+
 .item-list span {
   @apply flex justify-center items-center;
+}
+
+@media screen and (max-width: 899px) {
+  .item-list div span:nth-child(6) {
+    visibility: hidden;
+  }
 }
