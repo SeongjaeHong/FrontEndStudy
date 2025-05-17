@@ -2,7 +2,7 @@
 
 .item-list {
   display: grid;
-  grid-template-columns: max-content max-content max-content 1fr max-content max-content;
+  grid-template-columns: max-content max-content 1fr 2fr max-content max-content;
   width: 80%;
   margin-top: 3rem;
   font-size: 0.9rem;
@@ -33,10 +33,27 @@
 
 .item-list span {
   @apply flex justify-center items-center;
+  overflow: hidden;
 }
 
 @media screen and (max-width: 899px) {
-  .item-list div span:nth-child(6) {
-    visibility: hidden;
+  .item-list {
+    grid-template-columns: max-content max-content 1fr 2fr max-content;
+  }
+
+  .item-list .price {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 529px) {
+  .item-list {
+    grid-template-columns: max-content max-content max-content 2fr;
+    width: 100%;
+  }
+
+  .item-list .price,
+  .item-list .sex {
+    display: none;
   }
 }
