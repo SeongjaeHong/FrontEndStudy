@@ -1,8 +1,14 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import './css/Edit.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrash } from '@fortawesome/free-solid-svg-icons/faTrash';
 
 export default function Edit() {
-  const checkboxCount = 2; // TODO: 한 개 페이지에서 보여줄 아이템 항목 갯수로 사용 (가변)
+  const mockItemList = [
+    ['바지', '새바지', '남성', 12300],
+    ['장갑', '벙어리 장갑', '여성', 9380],
+  ];
+  const checkboxCount = mockItemList.length; // TODO: 한 개 페이지에서 보여줄 아이템 항목 갯수로 사용 (사용자 변경 가능 옵션). 실제 DB 조회 개수 할당
   const [checkedBoxes, setCheckedBoxes] = useState(
     new Array(checkboxCount).fill(false)
   );
@@ -11,42 +17,66 @@ export default function Edit() {
     updatedBoxes[index] = !updatedBoxes[index];
     setCheckedBoxes(updatedBoxes);
   };
-
-  const mockItemList = [
-    ['바지', '새바지', '남성', 12300],
-    ['장갑', '벙어리 장갑', '여성', 9380],
-  ];
-
   const isAnyChecked = checkedBoxes.some(Boolean);
 
+  const tooltipHoverRef = useRef();
+  const tooltieHoverTimeCountRef = useRef();
+  const tooltipEnterHandle = (e) => {
+    const target = e.currentTarget.dataset.tooltip;
+    tooltipHoverRef.current = target;
+    tooltieHoverTimeCountRef.current = () => {
+      setTimeout(() => {}, 1000);
+    };
+  };
+
+  const tooltipLeaveHandle = (e) => {
+    e.currentTarget.dataset.tooltip;
+  };
+
   return (
-    <>
-      <span>Check?:{isAnyChecked ? 'true' : 'false'}</span>
-      <section className='item-list'>
-        <div className='tab'>
-          <span className='checkbox'></span>
-          <span className='index'>번호</span>
-          <span className='category'>카테고리</span>
-          <span className='name'>상품명</span>
-          <span className='sex'>성별</span>
-          <span className='price'>가격</span>
+    <section className='column-edit'>
+      <section className='item-funcs'>
+        <div
+          className='item-func hover-cicle'
+          hidden={!isAnyChecked}
+          data-tooltip='Delete'
+          onMouseEnter={tooltipEnterHandle}
+          onMouseLeave={tooltipLeaveHandle}
+        >
+          <FontAwesomeIcon icon={faTrash} />
         </div>
-        {mockItemList.map((mockItem, index) => (
-          <div className='item' key={index}>
-            <span className='checkbox'>
-              <input
-                type='checkbox'
-                onClick={() => checkboxChangeHandle(index)}
-              />
-            </span>
-            <span className='index'>{index + 1}</span>
-            <span className='category'>{mockItem[0]}</span>
-            <span className='name'>{mockItem[1]}</span>
-            <span className='sex'>{mockItem[2]}</span>
-            <span className='price'>{mockItem[3]}</span>
-          </div>
-        ))}
       </section>
-    </>
+      <table className='item-list'>
+        <thead>
+          <tr className='tab'>
+            <th></th>
+            <th className='index'>번호</th>
+            <th className='category'>카테고리</th>
+            <th className='name'>상품명</th>
+            <th className='sex'>성별</th>
+            <th className='price'>가격</th>
+          </tr>
+        </thead>
+        <tbody>
+          {mockItemList.map((mockItem, index) => (
+            <tr className='item' key={index}>
+              <td className='checkbox'>
+                <div className='hover-cicle'>
+                  <input
+                    type='checkbox'
+                    onChange={() => checkboxChangeHandle(index)}
+                  />
+                </div>
+              </td>
+              <td className='index'>{index + 1}</td>
+              <td className='category'>{mockItem[0]}</td>
+              <td className='name'>{mockItem[1]}</td>
+              <td className='sex'>{mockItem[2]}</td>
+              <td className='price'>{mockItem[3]}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </section>
   );
 }

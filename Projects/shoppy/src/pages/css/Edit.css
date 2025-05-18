@@ -1,57 +1,51 @@
 @import 'tailwindcss';
 
-.item-list {
-  display: grid;
-  grid-template-columns: max-content max-content 1fr 2fr max-content max-content;
+.column-edit {
   width: 80%;
-  margin-top: 3rem;
-  font-size: 0.9rem;
+  margin-top: 2rem;
 }
 
-.item-list span {
-  padding: 0 0.5rem;
+.item-funcs {
+  height: 1.5rem;
+  margin-bottom: 1rem;
 }
 
-.item-list .tab span:hover {
+.item-func {
+  cursor: pointer;
+}
+
+.hover-cicle {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  @apply flex justify-center items-center;
+}
+
+.hover-cicle:hover {
+  background-color: gray;
+}
+
+.item-list {
+  width: 100%;
+  text-align: center;
+}
+
+.item-list tr:hover {
   @apply bg-zinc-100;
 }
 
-.item-list .tab {
-  display: contents;
-  font-weight: bold;
-}
-
 .item-list .item {
-  display: contents;
   font-size: 0.8rem;
   @apply border-t border-zinc-500;
 }
 
-.item-list .item:hover span {
-  @apply bg-zinc-100;
-}
-
-.item-list span {
-  @apply flex justify-center items-center;
-  overflow: hidden;
-}
-
 @media screen and (max-width: 899px) {
-  .item-list {
-    grid-template-columns: max-content max-content 1fr 2fr max-content;
-  }
-
   .item-list .price {
     display: none;
   }
 }
 
 @media screen and (max-width: 529px) {
-  .item-list {
-    grid-template-columns: max-content max-content max-content 2fr;
-    width: 100%;
-  }
-
   .item-list .price,
   .item-list .sex {
     display: none;
