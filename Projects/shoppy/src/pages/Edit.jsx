@@ -12,10 +12,24 @@ export default function Edit() {
   const [checkedBoxes, setCheckedBoxes] = useState(
     new Array(checkboxCount).fill(false)
   );
-  const checkboxChangeHandle = (index) => {
+  const displayItemFuncHandle = (index) => {
     const updatedBoxes = [...checkedBoxes];
     updatedBoxes[index] = !updatedBoxes[index];
     setCheckedBoxes(updatedBoxes);
+  };
+
+  const itemClickHandle = (e) => {
+    const target = e.target.closest('.item');
+    if (!target?.classList.contains('clicked')) {
+      target.classList.add('clicked');
+    } else {
+      target.classList.remove('clicked');
+    }
+  };
+
+  const checkboxChangeHandle = (e, index) => {
+    displayItemFuncHandle(index);
+    itemClickHandle(e);
   };
   const isAnyChecked = checkedBoxes.some(Boolean);
 
@@ -64,7 +78,7 @@ export default function Edit() {
                 <div className='hover-cicle'>
                   <input
                     type='checkbox'
-                    onChange={() => checkboxChangeHandle(index)}
+                    onChange={(e) => checkboxChangeHandle(e, index)}
                   />
                 </div>
               </td>

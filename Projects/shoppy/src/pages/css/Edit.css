@@ -30,7 +30,8 @@
   text-align: center;
 }
 
-.item-list tr:hover {
+.item-list tr:hover,
+.item-list .clicked {
   @apply bg-zinc-100;
 }
 
