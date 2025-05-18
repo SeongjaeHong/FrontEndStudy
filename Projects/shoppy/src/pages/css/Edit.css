@@ -40,6 +40,12 @@
   @apply border-t border-zinc-500;
 }
 
+.tooltip {
+  color: white;
+  padding: 3px;
+  @apply bg-zinc-600 rounded-md;
+}
+
 @media screen and (max-width: 899px) {
   .item-list .price {
     display: none;

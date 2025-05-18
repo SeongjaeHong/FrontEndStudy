@@ -33,18 +33,33 @@ export default function Edit() {
   };
   const isAnyChecked = checkedBoxes.some(Boolean);
 
-  const tooltipHoverRef = useRef();
-  const tooltieHoverTimeCountRef = useRef();
+  let tooltipEl = null;
+  const tooltipHoverTimeCountRef = useRef();
   const tooltipEnterHandle = (e) => {
-    const target = e.currentTarget.dataset.tooltip;
-    tooltipHoverRef.current = target;
-    tooltieHoverTimeCountRef.current = () => {
-      setTimeout(() => {}, 1000);
-    };
+    const target = e.currentTarget;
+    tooltipHoverTimeCountRef.current = setTimeout(() => {
+      tooltipEl = document.createElement('div');
+      tooltipEl.className = 'tooltip';
+      tooltipEl.innerText = target.dataset.tooltip;
+      const coords = target.getBoundingClientRect();
+      const left = coords.left;
+      const top = coords.bottom + 5;
+      tooltipEl.style.position = 'absolute';
+      tooltipEl.style.left = `${left}px`;
+      tooltipEl.style.top = `${top}px`;
+      document.body.append(tooltipEl);
+    }, 200);
   };
 
-  const tooltipLeaveHandle = (e) => {
-    e.currentTarget.dataset.tooltip;
+  const tooltipLeaveHandle = () => {
+    if (tooltipHoverTimeCountRef.current) {
+      clearTimeout(tooltipHoverTimeCountRef.current);
+      tooltipHoverTimeCountRef.current = null;
+    }
+    if (tooltipEl) {
+      tooltipEl.remove();
+      tooltipEl = null;
+    }
   };
 
   return (
