@@ -12,7 +12,7 @@ export default function EditItemDetail() {
     name: '',
     category: '',
     price: '',
-    sex: 'masculine',
+    sex: '남성',
   });
 
   useEffect(() => {
@@ -51,6 +51,7 @@ export default function EditItemDetail() {
   const navigate = useNavigate();
   const submitHandle = (e) => {
     e.preventDefault();
+    sessionStorage.removeItem(FORM_KEY);
     saveItem({ db, formData })
       .then(() => sessionStorage.removeItem(FORM_KEY))
       .then(() => {
@@ -103,9 +104,9 @@ export default function EditItemDetail() {
             onChange={changeHandle}
             value={formData.sex}
           >
-            <option value='masculine'>남성</option>
-            <option value='feminine'>여성</option>
-            <option value='neuter'>중성</option>
+            <option value='남성'>남성</option>
+            <option value='여성'>여성</option>
+            <option value='중성'>중성</option>
           </select>
         </div>
       </div>

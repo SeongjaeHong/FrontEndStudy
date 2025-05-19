@@ -1,10 +1,10 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import './css/Edit.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons/faTrash';
 import { useDB } from '../App';
-import { ref, remove } from 'firebase/database';
 import { useNavigate } from 'react-router';
+import { fetchItem, removeItem } from '../api/firebaseAPI';
 
 export default function Edit() {
   const navigate = useNavigate();
@@ -67,15 +67,42 @@ export default function Edit() {
   };
 
   const db = useDB();
-  // const addItemHandle = () => {
-  //   set(ref(db, '/items/2'), item);
-  // };
-  const removeItemHandle = () => {
+  const [reload, setReload] = useState(false);
+  const removeItemHandle = async () => {
+    const removeIds = [];
     checkedBoxes.map((isChecked, index) => {
       if (!isChecked) return;
-      remove(ref(db, '/items/' + (index + 1)));
+      removeIds.push(formData[index].id);
     });
+
+    try {
+      await removeItem({ db, removeIds });
+      setReload((prev) => !prev);
+    } catch (err) {
+      console.error(err);
+    }
   };
+
+  const [formData, setFormData] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function loadItems() {
+      try {
+        const items = await fetchItem(db);
+        setFormData(items);
+      } catch (err) {
+        console.error('데이터 Fetch 오류: ', err);
+      } finally {
+        setLoading(false);
+      }
+    }
+    loadItems();
+  }, [reload]);
+
+  if (loading) {
+    return <div>데이터 로딩 중...</div>;
+  }
 
   return (
     <section className='column-edit'>
@@ -87,7 +114,10 @@ export default function Edit() {
             data-tooltip='Delete'
             onMouseEnter={tooltipEnterHandle}
             onMouseLeave={tooltipLeaveHandle}
-            onClick={removeItemHandle}
+            onClick={() => {
+              tooltipLeaveHandle();
+              removeItemHandle();
+            }}
           >
             <FontAwesomeIcon icon={faTrash} />
           </div>
@@ -114,23 +144,24 @@ export default function Edit() {
           </tr>
         </thead>
         <tbody>
-          {mockItemList.map((mockItem, index) => (
-            <tr className='item' key={index}>
-              <td className='checkbox'>
-                <div className='hover-cicle'>
-                  <input
-                    type='checkbox'
-                    onChange={(e) => checkboxChangeHandle(e, index)}
-                  />
-                </div>
-              </td>
-              <td className='index'>{index + 1}</td>
-              <td className='category'>{mockItem[0]}</td>
-              <td className='name'>{mockItem[1]}</td>
-              <td className='sex'>{mockItem[2]}</td>
-              <td className='price'>{mockItem[3]}</td>
-            </tr>
-          ))}
+          {!loading &&
+            formData.map((item, index) => (
+              <tr className='item' key={item.id}>
+                <td className='checkbox'>
+                  <div className='hover-cicle'>
+                    <input
+                      type='checkbox'
+                      onChange={(e) => checkboxChangeHandle(e, index)}
+                    />
+                  </div>
+                </td>
+                <td className='index'>{index + 1}</td>
+                <td className='category'>{item.category}</td>
+                <td className='name'>{item.name}</td>
+                <td className='sex'>{item.sex}</td>
+                <td className='price'>{item.price}</td>
+              </tr>
+            ))}
         </tbody>
       </table>
     </section>
