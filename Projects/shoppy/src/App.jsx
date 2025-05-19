@@ -1,12 +1,12 @@
 import { Outlet } from 'react-router';
 import Header from './components/Header';
 import { createContext, useContext } from 'react';
-import { getFirestore } from 'firebase/firestore/lite';
 import { initializeApp } from 'firebase/app';
 import firebaseConfig from '../firebase.config';
+import { getDatabase } from '@firebase/database';
 
 const dbContext = createContext();
-const db = getFirestore(initializeApp(firebaseConfig));
+const db = getDatabase(initializeApp(firebaseConfig));
 
 export default function App() {
   return (

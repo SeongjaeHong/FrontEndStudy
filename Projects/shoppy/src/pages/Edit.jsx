@@ -2,8 +2,12 @@ import { useRef, useState } from 'react';
 import './css/Edit.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons/faTrash';
+import { useDB } from '../App';
+import { ref, remove, set } from 'firebase/database';
+import { useNavigate } from 'react-router';
 
 export default function Edit() {
+  const navigate = useNavigate();
   const mockItemList = [
     ['바지', '새바지', '남성', 12300],
     ['장갑', '벙어리 장갑', '여성', 9380],
@@ -62,18 +66,37 @@ export default function Edit() {
     }
   };
 
+  const db = useDB();
+  // const addItemHandle = () => {
+  //   set(ref(db, '/items/2'), item);
+  // };
+  const removeItemHandle = () => {
+    checkedBoxes.map((isChecked, index) => {
+      if (!isChecked) return;
+      remove(ref(db, '/items/' + (index + 1)));
+    });
+  };
+
   return (
     <section className='column-edit'>
       <section className='item-funcs'>
-        <div
-          className='item-func hover-cicle'
-          hidden={!isAnyChecked}
-          data-tooltip='Delete'
-          onMouseEnter={tooltipEnterHandle}
-          onMouseLeave={tooltipLeaveHandle}
-        >
-          <FontAwesomeIcon icon={faTrash} />
-        </div>
+        <section className='left-side'>
+          <div
+            className='item-func hover-cicle'
+            hidden={!isAnyChecked}
+            data-tooltip='Delete'
+            onMouseEnter={tooltipEnterHandle}
+            onMouseLeave={tooltipLeaveHandle}
+            onClick={removeItemHandle}
+          >
+            <FontAwesomeIcon icon={faTrash} />
+          </div>
+        </section>
+        <section className='right-side'>
+          <button id='add-item' onClick={() => navigate('/detail')}>
+            추가
+          </button>
+        </section>
       </section>
       <table className='item-list'>
         <thead>
