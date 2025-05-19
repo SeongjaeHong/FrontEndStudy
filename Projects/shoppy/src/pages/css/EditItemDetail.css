@@ -1,0 +1,49 @@
+@import 'tailwindcss';
+
+.edit-form {
+  margin: 2rem;
+  width: 50%;
+  @apply flex flex-col items-center;
+}
+
+.style-eidt-row {
+  margin-top: -1px;
+  width: 100%;
+  padding: 0.5rem 0.5rem;
+  @apply flex items-center;
+  @apply border border-red-300;
+}
+
+.bar {
+  @apply text-red-300;
+  font-size: 0.7rem;
+}
+
+.style-edit-column-title {
+  padding: 0.2rem;
+  width: fit-content;
+}
+
+.style-edit-column-content {
+  padding: 0.2rem;
+  flex: 1 1 auto;
+  display: flex;
+}
+
+.style-edit-column-content input {
+  flex: 1 1 auto;
+}
+
+.input-image {
+  background-color: red;
+  display: none;
+}
+
+#uploaded-image-text {
+  color: gray;
+}
+
+#submit-button {
+  margin-top: 1rem;
+  @apply bg-rose-500 hover:bg-rose-600;
+}
