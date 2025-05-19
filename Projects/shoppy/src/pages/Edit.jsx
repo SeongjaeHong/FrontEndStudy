@@ -3,7 +3,7 @@ import './css/Edit.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons/faTrash';
 import { useDB } from '../App';
-import { ref, remove, set } from 'firebase/database';
+import { ref, remove } from 'firebase/database';
 import { useNavigate } from 'react-router';
 
 export default function Edit() {
@@ -93,7 +93,11 @@ export default function Edit() {
           </div>
         </section>
         <section className='right-side'>
-          <button id='add-item' onClick={() => navigate('/detail')}>
+          <button
+            className='style-button'
+            id='add-item'
+            onClick={() => navigate('/edit-detail')}
+          >
             추가
           </button>
         </section>

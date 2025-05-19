@@ -23,7 +23,9 @@ export default function Header() {
           <FontAwesomeIcon icon={faPenToSquare} />
         </button>
         <div className='login'>
-          <button>Login</button>
+          <button id='login-button' className='style-button'>
+            로그인
+          </button>
         </div>
       </section>
     </header>
