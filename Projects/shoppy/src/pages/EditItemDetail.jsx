@@ -1,23 +1,79 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import './css/EditItemDetail.css';
+import { useDB } from '../App';
+import { saveItem } from '../api/firebaseAPI';
+import { useNavigate } from 'react-router';
+
+const FORM_KEY = 'item-in-edit';
 
 export default function EditItemDetail() {
   const [uploadedFileName, setUploadedFileName] = useState('');
+  const [formData, setFormData] = useState({
+    name: '',
+    category: '',
+    price: '',
+    sex: 'masculine',
+  });
+
+  useEffect(() => {
+    const saved = sessionStorage.getItem(FORM_KEY);
+    if (saved) {
+      setFormData(JSON.parse(saved));
+    }
+  }, []);
+
+  const autoSaveTimeCountRef = useRef(null);
+
   const fileChangeHandle = (e) => {
     const el = e.currentTarget;
     if (el.files.length) {
       setUploadedFileName(el.files[0].name);
     }
   };
+
+  const changeHandle = (e) => {
+    const { name, value } = e.currentTarget;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+    autoSaveHandle();
+  };
+
+  const autoSaveHandle = () => {
+    if (autoSaveTimeCountRef.current) {
+      clearTimeout(autoSaveTimeCountRef.current);
+    }
+    autoSaveTimeCountRef.current = setTimeout(() => {
+      sessionStorage.setItem(FORM_KEY, JSON.stringify(formData));
+      autoSaveTimeCountRef.current = null;
+    }, 3 * 1000);
+  };
+
+  const db = useDB();
+  const navigate = useNavigate();
+  const submitHandle = (e) => {
+    e.preventDefault();
+    saveItem({ db, formData })
+      .then(() => sessionStorage.removeItem(FORM_KEY))
+      .then(() => {
+        navigate('/edit');
+      })
+      .catch((err) => console.error(err));
+  };
+
   return (
-    <form className='edit-form'>
+    <form className='edit-form' method='post'>
       <div className='style-eidt-row'>
         <div className='style-edit-column-title'>
           <label htmlFor='name'>상품명</label>
         </div>
         <span className='bar'>|</span>
         <div className='style-edit-column-content'>
-          <input id='name' placeholder='상품명' />
+          <input
+            id='name'
+            name='name'
+            placeholder='상품명'
+            onChange={changeHandle}
+            value={formData.name}
+          />
         </div>
       </div>
       <div className='style-eidt-row'>
@@ -26,7 +82,31 @@ export default function EditItemDetail() {
         </div>
         <span className='bar'>|</span>
         <div className='style-edit-column-content'>
-          <input id='category' placeholder='카테고리' />
+          <input
+            id='category'
+            name='category'
+            placeholder='카테고리'
+            onChange={changeHandle}
+            value={formData.category}
+          />
+        </div>
+      </div>
+      <div className='style-eidt-row'>
+        <div className='style-edit-column-title'>
+          <label htmlFor='sex'>성별</label>
+        </div>
+        <span className='bar'>|</span>
+        <div className='style-edit-column-content'>
+          <select
+            id='sex'
+            name='sex'
+            onChange={changeHandle}
+            value={formData.sex}
+          >
+            <option value='masculine'>남성</option>
+            <option value='feminine'>여성</option>
+            <option value='neuter'>중성</option>
+          </select>
         </div>
       </div>
       <div className='style-eidt-row'>
@@ -35,8 +115,14 @@ export default function EditItemDetail() {
         </div>
         <span className='bar'>|</span>
         <div className='style-edit-column-content'>
-          <input type='number' id='price' placeholder='가격' />{' '}
-          {/* 가격 검증 로직 추가 */}
+          <input
+            type='number'
+            id='price'
+            name='price'
+            placeholder='가격'
+            onChange={changeHandle}
+            value={formData.price}
+          />
         </div>
       </div>
       <div className='style-eidt-row'>
@@ -49,6 +135,7 @@ export default function EditItemDetail() {
             type='file'
             className='input-image'
             id='input-image'
+            name='input-image'
             accept='image/*'
             onChange={fileChangeHandle}
           ></input>
@@ -60,7 +147,11 @@ export default function EditItemDetail() {
           />
         </div>
       </div>
-      <button id='submit-button' className='style-button'>
+      <button
+        id='submit-button'
+        className='style-button'
+        onClick={submitHandle}
+      >
         확인
       </button>
     </form>

@@ -45,5 +45,6 @@
 
 #submit-button {
   margin-top: 1rem;
+  padding: 0.5rem 2rem;
   @apply bg-rose-500 hover:bg-rose-600;
 }

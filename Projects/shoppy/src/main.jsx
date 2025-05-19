@@ -10,7 +10,7 @@ import App from './App.jsx';
 import Home from './pages/Home.jsx';
 import './index.css';
 import Edit from './pages/Edit.jsx';
-import ItemDetail from './pages/ItemDetail.jsx';
+import EditItemDetail from './pages/EditItemDetail.jsx';
 
 const router = createBrowserRouter([
   {
@@ -20,7 +20,7 @@ const router = createBrowserRouter([
     children: [
       { index: true, Component: Home },
       { path: 'edit', Component: Edit },
-      { path: 'detail', Component: ItemDetail },
+      { path: 'edit-detail', Component: EditItemDetail },
     ],
   },
   { path: '*', Component: NotFound },
