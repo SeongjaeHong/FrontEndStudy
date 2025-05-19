@@ -8,10 +8,28 @@
 .item-funcs {
   height: 1.5rem;
   margin-bottom: 1rem;
+  position: relative;
+  @apply flex items-center;
 }
 
 .item-func {
   cursor: pointer;
+}
+
+.left-side {
+  display: inline-block;
+}
+
+.right-side {
+  position: absolute;
+  display: inline-block;
+  right: 0;
+}
+
+#add-item {
+  @apply rounded-lg px-2 py-1;
+  @apply bg-gray-500 hover:bg-gray-600;
+  @apply text-white text-sm;
 }
 
 .hover-cicle {
@@ -19,10 +37,7 @@
   height: 2rem;
   border-radius: 50%;
   @apply flex justify-center items-center;
-}
-
-.hover-cicle:hover {
-  background-color: gray;
+  @apply hover:bg-gray-300;
 }
 
 .item-list {
