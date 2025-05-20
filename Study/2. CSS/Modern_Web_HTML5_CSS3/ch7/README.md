@@ -12,5 +12,5 @@
 
 <p align="center">
 <img src="./images/BFC_Before&After.png" alt="BFC_Before&After">
-<center><b>BFC 적용 전후 비교</b></center>
 </p>
+<p align="center"><b>BFC 적용 전후 비교</b></p>
