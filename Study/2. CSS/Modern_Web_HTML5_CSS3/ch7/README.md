@@ -14,3 +14,5 @@
 <img src="./images/BFC_Before&After.png" alt="BFC_Before&After">
 </p>
 <p align="center"><b>BFC 적용 전후 비교</b></p>
+
+![결과화면](./images/Result.png)
