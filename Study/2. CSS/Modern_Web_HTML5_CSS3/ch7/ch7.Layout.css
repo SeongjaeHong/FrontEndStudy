@@ -92,3 +92,15 @@ ul.right {
 article {
   padding-left: 10px;
 }
+
+/* Footer */
+#main_footer {
+  padding: 10px;
+  border-top: 3px solid black;
+  text-align: center;
+}
+
+h3 {
+  margin: 0;
+  padding: 0;
+}
