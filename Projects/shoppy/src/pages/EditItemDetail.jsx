@@ -49,14 +49,15 @@ export default function EditItemDetail() {
 
   const db = useDB();
   const navigate = useNavigate();
-  const submitHandle = (e) => {
+  const submitHandle = async (e) => {
     e.preventDefault();
-    saveItem({ db, formData })
-      .then(() => sessionStorage.removeItem(FORM_KEY))
-      .then(() => {
-        navigate('/edit');
-      })
-      .catch((err) => console.error(err));
+    try {
+      await saveItem({ db, formData });
+      sessionStorage.removeItem(FORM_KEY);
+      navigate('/edit');
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   return (
