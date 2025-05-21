@@ -1,7 +1,6 @@
-import { collection, getDocs } from 'firebase/firestore/lite';
-import { useDB } from '../App';
 import ItemCard from '../components/ItemCard';
 import './css/Home.css';
+import { useDB } from '../contexts/DBProvider';
 
 export default function Home() {
   const db = useDB();
@@ -17,11 +16,4 @@ export default function Home() {
       </section>
     </>
   );
-}
-
-async function getItems(db) {
-  const itemsCol = collection(db, 'items');
-  const itemSnapshot = await getDocs(itemsCol);
-  const itemList = itemSnapshot.docs.map((doc) => doc.data());
-  return itemList;
 }

@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import './css/EditItemDetail.css';
-import { useDB } from '../App';
 import { saveItem } from '../api/firebaseAPI';
 import { useNavigate } from 'react-router';
+import { useDB } from '../contexts/DBProvider';
 
 const FORM_KEY = 'item-in-edit';
 
@@ -51,7 +51,6 @@ export default function EditItemDetail() {
   const navigate = useNavigate();
   const submitHandle = (e) => {
     e.preventDefault();
-    sessionStorage.removeItem(FORM_KEY);
     saveItem({ db, formData })
       .then(() => sessionStorage.removeItem(FORM_KEY))
       .then(() => {

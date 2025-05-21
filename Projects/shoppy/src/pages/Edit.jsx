@@ -2,16 +2,17 @@ import { useEffect, useRef, useState } from 'react';
 import './css/Edit.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons/faTrash';
-import { useDB } from '../App';
 import { useNavigate } from 'react-router';
 import { fetchItem, removeItem } from '../api/firebaseAPI';
+import { useDB } from '../contexts/DBProvider';
+
+const mockItemList = [
+  ['바지', '새바지', '남성', 12300],
+  ['장갑', '벙어리 장갑', '여성', 9380],
+];
 
 export default function Edit() {
   const navigate = useNavigate();
-  const mockItemList = [
-    ['바지', '새바지', '남성', 12300],
-    ['장갑', '벙어리 장갑', '여성', 9380],
-  ];
   const checkboxCount = mockItemList.length; // TODO: 한 개 페이지에서 보여줄 아이템 항목 갯수로 사용 (사용자 변경 가능 옵션). 실제 DB 조회 개수 할당
   const [checkedBoxes, setCheckedBoxes] = useState(
     new Array(checkboxCount).fill(false)
