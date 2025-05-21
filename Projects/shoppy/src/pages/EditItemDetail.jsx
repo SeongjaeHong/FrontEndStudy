@@ -51,6 +51,11 @@ export default function EditItemDetail() {
   const navigate = useNavigate();
   const submitHandle = async (e) => {
     e.preventDefault();
+    if (autoSaveTimeCountRef.current) {
+      clearTimeout(autoSaveTimeCountRef.current);
+      autoSaveTimeCountRef.current = null;
+    }
+
     try {
       await saveItem({ db, formData });
       sessionStorage.removeItem(FORM_KEY);
@@ -61,7 +66,7 @@ export default function EditItemDetail() {
   };
 
   return (
-    <form className='edit-form' method='post'>
+    <form className='edit-form' method='post' onSubmit={submitHandle}>
       <div className='style-eidt-row'>
         <div className='style-edit-column-title'>
           <label htmlFor='name'>상품명</label>
@@ -74,6 +79,7 @@ export default function EditItemDetail() {
             placeholder='상품명'
             onChange={changeHandle}
             value={formData.name}
+            required={true}
           />
         </div>
       </div>
@@ -89,6 +95,7 @@ export default function EditItemDetail() {
             placeholder='카테고리'
             onChange={changeHandle}
             value={formData.category}
+            required={true}
           />
         </div>
       </div>
@@ -123,6 +130,7 @@ export default function EditItemDetail() {
             placeholder='가격'
             onChange={changeHandle}
             value={formData.price}
+            required={true}
           />
         </div>
       </div>
@@ -148,11 +156,7 @@ export default function EditItemDetail() {
           />
         </div>
       </div>
-      <button
-        id='submit-button'
-        className='style-button'
-        onClick={submitHandle}
-      >
+      <button id='submit-button' className='style-button'>
         확인
       </button>
     </form>
