@@ -1,4 +1,3 @@
-import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import {
   createBrowserRouter,
@@ -11,6 +10,7 @@ import Home from './pages/Home.jsx';
 import './index.css';
 import Edit from './pages/Edit.jsx';
 import EditItemDetail from './pages/EditItemDetail.jsx';
+import DBProvider from './contexts/DBProvider.jsx';
 
 const router = createBrowserRouter([
   {
@@ -26,11 +26,18 @@ const router = createBrowserRouter([
   { path: '*', Component: NotFound },
 ]);
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <RouterProvider router={router} />
-  </StrictMode>
-);
+let container = null;
+document.addEventListener('DOMContentLoaded', () => {
+  if (!container) {
+    container = document.getElementById('root');
+    const root = createRoot(container);
+    root.render(
+      <DBProvider>
+        <RouterProvider router={router} />
+      </DBProvider>
+    );
+  }
+});
 
 function ErrorPage() {
   const error = useRouteError();
