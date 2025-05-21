@@ -14,6 +14,7 @@ export default function EditItemDetail() {
     price: '',
     sex: '남성',
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
     const saved = sessionStorage.getItem(FORM_KEY);
@@ -51,6 +52,9 @@ export default function EditItemDetail() {
   const navigate = useNavigate();
   const submitHandle = async (e) => {
     e.preventDefault();
+    if (isSubmitting) return;
+    setIsSubmitting(true);
+
     if (autoSaveTimeCountRef.current) {
       clearTimeout(autoSaveTimeCountRef.current);
       autoSaveTimeCountRef.current = null;
@@ -62,6 +66,8 @@ export default function EditItemDetail() {
       navigate('/edit');
     } catch (err) {
       console.error(err);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -156,8 +162,12 @@ export default function EditItemDetail() {
           />
         </div>
       </div>
-      <button id='submit-button' className='style-button'>
-        확인
+      <button
+        id='submit-button'
+        className='style-button'
+        disabled={isSubmitting}
+      >
+        {isSubmitting ? <span className='spinner'> 저장 중... </span> : '확인'}
       </button>
     </form>
   );
