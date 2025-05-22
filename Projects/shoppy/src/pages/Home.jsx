@@ -1,9 +1,7 @@
 import ItemCard from '../components/ItemCard';
 import './css/Home.css';
-import { useDB } from '../contexts/DBProvider';
 
 export default function Home() {
-  const db = useDB();
   return (
     <>
       <div className='main-image'>
