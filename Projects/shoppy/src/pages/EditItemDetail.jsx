@@ -169,7 +169,13 @@ export default function EditItemDetail() {
         className='style-button'
         disabled={isSubmitting}
       >
-        {isSubmitting ? <span className='spinner'> 저장 중... </span> : '확인'}
+        {isSubmitting ? (
+          <>
+            <span className='spinner' /> 저장 중...
+          </>
+        ) : (
+          '확인'
+        )}
       </button>
     </form>
   );
