@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from 'react';
 import './css/EditItemDetail.css';
 import { saveItem } from '../api/firebaseAPI';
 import { useNavigate } from 'react-router';
-import { useDB } from '../contexts/DBProvider';
 
 const FORM_KEY = 'item-in-edit';
 
@@ -13,6 +12,7 @@ export default function EditItemDetail() {
     category: '',
     price: '',
     sex: '남성',
+    image: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -29,6 +29,7 @@ export default function EditItemDetail() {
     const el = e.currentTarget;
     if (el.files.length) {
       setUploadedFileName(el.files[0].name);
+      setFormData((prev) => ({ ...prev, image: el.files[0] }));
     }
   };
 
@@ -48,7 +49,6 @@ export default function EditItemDetail() {
     }, 3 * 1000);
   };
 
-  const db = useDB();
   const navigate = useNavigate();
   const submitHandle = async (e) => {
     e.preventDefault();
@@ -61,7 +61,7 @@ export default function EditItemDetail() {
     }
 
     try {
-      await saveItem({ db, formData });
+      await saveItem(formData);
       sessionStorage.removeItem(FORM_KEY);
       navigate('/edit');
     } catch (err) {

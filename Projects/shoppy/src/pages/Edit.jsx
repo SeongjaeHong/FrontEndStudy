@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons/faTrash';
 import { useNavigate } from 'react-router';
 import { fetchItem, removeItem } from '../api/firebaseAPI';
-import { useDB } from '../contexts/DBProvider';
 
 const mockItemList = [
   ['바지', '새바지', '남성', 12300],
@@ -67,7 +66,6 @@ export default function Edit() {
     }
   };
 
-  const db = useDB();
   const [reload, setReload] = useState(false);
   const removeItemHandle = async () => {
     const removeIds = [];
@@ -77,7 +75,7 @@ export default function Edit() {
     });
 
     try {
-      await removeItem({ db, removeIds });
+      await removeItem(removeIds);
       setReload((prev) => !prev);
     } catch (err) {
       console.error(err);
@@ -90,7 +88,7 @@ export default function Edit() {
   useEffect(() => {
     async function loadItems() {
       try {
-        const items = await fetchItem(db);
+        const items = await fetchItem();
         setFormData(items);
       } catch (err) {
         console.error('데이터 Fetch 오류: ', err);

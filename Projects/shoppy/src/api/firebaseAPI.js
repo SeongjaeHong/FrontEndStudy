@@ -1,6 +1,6 @@
-import { get, push, ref, remove, update } from 'firebase/database';
+import { get, getDatabase, push, ref, remove, update } from 'firebase/database';
 import { initializeApp } from 'firebase/app';
-import { getDatabase } from '@firebase/database';
+import { getStorage, uploadBytes } from 'firebase/storage';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyBAaI3cnyt2xWB_yh34Frt2JC3B8Q2ROXY',
@@ -13,39 +13,47 @@ const firebaseConfig = {
   appId: '1:160873879655:web:54440e3e8cfce779fe9cc2',
   measurementId: 'G-R9RRX5S9HX',
 };
-export const firebaseDB = getDatabase(initializeApp(firebaseConfig));
+const app = initializeApp(firebaseConfig);
+export const firebaseDB = getDatabase(app);
+export const firebaseStorage = getStorage(app);
 
 const ITEM_PATH = 'items';
-export async function saveItem(request) {
-  const formData = request.formData;
-  const db = request.db;
+const IMAGE_PATH = 'images';
 
+export async function saveItem(formData) {
   const item = {
-    ...formData,
     createdAt: Date.now(),
   };
 
-  const itemRef = ref(db, ITEM_PATH);
+  for (const key of Object.keys(formData)) {
+    if (key !== 'image') {
+      item[key] = formData[key];
+    }
+  }
+
+  // if (formData.image) {
+  //   const imageRef = ref(firebaseStorage, IMAGE_PATH);
+  //   await uploadBytes(imageRef, formData.image);
+  // }
+
+  const itemRef = ref(firebaseDB, ITEM_PATH);
   await push(itemRef, item);
 }
 
-export async function removeItem(request) {
-  const removeIds = request.removeIds;
-  const db = request.db;
-
+export async function removeItem(removeIds) {
   removeIds.map(() => async (id) => {
-    await remove(ref(db, '/items/' + id));
+    await remove(ref(firebaseDB, '/items/' + id));
   });
 
   const removePaths = {};
   removeIds.map((id) => {
     removePaths['items/' + id] = null;
   });
-  update(ref(db), removePaths);
+  update(ref(firebaseDB), removePaths);
 }
 
-export async function fetchItem(db) {
-  const snapshot = await get(ref(db, ITEM_PATH));
+export async function fetchItem() {
+  const snapshot = await get(ref(firebaseDB, ITEM_PATH));
   if (snapshot.exists()) {
     const data = snapshot.val();
     const items = Object.entries(data).map(([id, value]) => ({

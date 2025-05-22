@@ -10,7 +10,6 @@ import Home from './pages/Home.jsx';
 import './index.css';
 import Edit from './pages/Edit.jsx';
 import EditItemDetail from './pages/EditItemDetail.jsx';
-import DBProvider from './contexts/DBProvider.jsx';
 
 const router = createBrowserRouter([
   {
@@ -31,11 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!container) {
     container = document.getElementById('root');
     const root = createRoot(container);
-    root.render(
-      <DBProvider>
-        <RouterProvider router={router} />
-      </DBProvider>
-    );
+    root.render(<RouterProvider router={router} />);
   }
 });
 
