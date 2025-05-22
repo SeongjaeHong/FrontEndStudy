@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
       <div className='main-image'>
-        <img src='/image/main_image_wide.webp' alt='main image' />
+        <img src='/image/banner-image.webp' alt='main image' />
       </div>
       <section className='items'>
         {/* <ItemCard></ItemCard> */}
