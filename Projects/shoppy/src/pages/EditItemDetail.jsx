@@ -86,6 +86,7 @@ export default function EditItemDetail() {
             onChange={changeHandle}
             value={formData.name}
             required={true}
+            autoComplete='off'
           />
         </div>
       </div>
@@ -102,6 +103,7 @@ export default function EditItemDetail() {
             onChange={changeHandle}
             value={formData.category}
             required={true}
+            autoComplete='off'
           />
         </div>
       </div>
