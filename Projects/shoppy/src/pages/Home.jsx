@@ -33,7 +33,7 @@ export default function Home() {
           <ul className='items'>
             {items.map((item) => (
               <li className='card' key={item.id}>
-                <a href='#'>
+                <a href={'/product?id=' + item.id}>
                   <ItemCard item={item} />
                 </a>
               </li>

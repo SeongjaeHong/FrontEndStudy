@@ -11,6 +11,7 @@ import './index.css';
 import Edit from './pages/Edit.jsx';
 import EditItemDetail from './pages/EditItemDetail.jsx';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import ItemDetail from './pages/ItemDetail.jsx';
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,7 @@ const router = createBrowserRouter([
       { index: true, Component: Home },
       { path: 'edit', Component: Edit },
       { path: 'edit-detail', Component: EditItemDetail },
+      { path: 'product', Component: ItemDetail },
     ],
   },
   { path: '*', Component: NotFound },
