@@ -5,17 +5,9 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons/faTrash';
 import { useNavigate } from 'react-router';
 import { fetchItem, removeItem } from '../api/firebaseAPI';
 
-const mockItemList = [
-  ['바지', '새바지', '남성', 12300],
-  ['장갑', '벙어리 장갑', '여성', 9380],
-];
-
 export default function Edit() {
   const navigate = useNavigate();
-  const checkboxCount = mockItemList.length; // TODO: 한 개 페이지에서 보여줄 아이템 항목 갯수로 사용 (사용자 변경 가능 옵션). 실제 DB 조회 개수 할당
-  const [checkedBoxes, setCheckedBoxes] = useState(
-    new Array(checkboxCount).fill(false)
-  );
+  const [checkedBoxes, setCheckedBoxes] = useState([]);
   const displayItemFuncHandle = (index) => {
     const updatedBoxes = [...checkedBoxes];
     updatedBoxes[index] = !updatedBoxes[index];
@@ -90,6 +82,7 @@ export default function Edit() {
       try {
         const items = await fetchItem();
         setFormData(items);
+        setCheckedBoxes(new Array(items.length).fill(false));
       } catch (err) {
         console.error('데이터 Fetch 오류: ', err);
       } finally {
