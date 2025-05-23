@@ -10,6 +10,7 @@ import Home from './pages/Home.jsx';
 import './index.css';
 import Edit from './pages/Edit.jsx';
 import EditItemDetail from './pages/EditItemDetail.jsx';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 const router = createBrowserRouter([
   {
@@ -25,12 +26,17 @@ const router = createBrowserRouter([
   { path: '*', Component: NotFound },
 ]);
 
+const queryClient = new QueryClient();
 let container = null;
 document.addEventListener('DOMContentLoaded', () => {
   if (!container) {
     container = document.getElementById('root');
     const root = createRoot(container);
-    root.render(<RouterProvider router={router} />);
+    root.render(
+      <QueryClientProvider client={queryClient}>
+        <RouterProvider router={router} />
+      </QueryClientProvider>
+    );
   }
 });
 
