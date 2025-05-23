@@ -12,7 +12,6 @@ export default function EditItemDetail() {
     category: '',
     price: '',
     sex: '남성',
-    image: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -144,7 +143,7 @@ export default function EditItemDetail() {
       </div>
       <div className='style-eidt-row'>
         <div className='style-edit-column-title'>
-          <label htmlFor='input-image'>파일첨부</label>
+          <label>파일첨부</label>
         </div>
         <span className='bar'>|</span>
         <div className='style-edit-column-content'>
@@ -158,7 +157,7 @@ export default function EditItemDetail() {
           ></input>
           <input
             id='uploaded-image-text'
-            placeholder='첨부파일'
+            placeholder='첨부파일 기능은 비활성화 상태입니다.'
             value={uploadedFileName}
             readOnly
           />
