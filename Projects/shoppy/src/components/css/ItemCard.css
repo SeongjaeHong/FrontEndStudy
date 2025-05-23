@@ -1,0 +1,19 @@
+@import 'tailwindcss';
+
+.card:hover {
+  @apply shadow-md shadow-zinc-500;
+}
+
+.thumbnail img {
+  aspect-ratio: 1;
+  object-fit: contain;
+}
+
+.item-info {
+  padding-top: 10px;
+  @apply flex flex-col;
+}
+
+.item-info .name {
+  @apply line-clamp-2;
+}
