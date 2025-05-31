@@ -1,0 +1,55 @@
+@import 'tailwindcss';
+
+.content-detail {
+  margin-top: 1rem;
+  @apply flex;
+}
+
+.img-col {
+  padding: 0 10px;
+  width: 40%;
+}
+
+.info-col {
+  width: 60%;
+}
+
+.info-col .price {
+  font-size: 2rem;
+  font-weight: bold;
+  padding-bottom: 10px;
+  @apply border-b border-zinc-500;
+}
+
+.info-col .title {
+  padding-bottom: 10px;
+  @apply border-b border-zinc-500;
+}
+
+.info-col .product-title {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.info-col .sex {
+  color: gray;
+}
+
+.product-buy {
+  width: 100%;
+  @apply flex justify-between;
+}
+.product-buy button {
+  margin-top: 10px;
+  width: 48%;
+  padding: 1rem;
+}
+.product-buy-btn {
+  @apply bg-blue-500 text-white;
+  @apply hover:bg-sky-700;
+}
+
+.product-cart-btn {
+  @apply border border-blue-500 text-blue-500;
+  @apply hover:border-sky-700 hover:text-sky-700;
+}

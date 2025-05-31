@@ -1,0 +1,67 @@
+@import 'tailwindcss';
+
+.edit-form {
+  margin: 2rem;
+  width: 50%;
+  @apply flex flex-col items-center;
+}
+
+.style-eidt-row {
+  margin-top: -1px;
+  width: 100%;
+  padding: 0.5rem 0.5rem;
+  @apply flex items-center;
+  @apply border border-red-300;
+}
+
+.bar {
+  @apply text-red-300;
+  font-size: 0.7rem;
+}
+
+.style-edit-column-title {
+  padding: 0.2rem;
+  width: fit-content;
+}
+
+.style-edit-column-content {
+  padding: 0.2rem;
+  flex: 1 1 auto;
+  display: flex;
+}
+
+.style-edit-column-content input {
+  flex: 1 1 auto;
+}
+
+.input-image {
+  display: none;
+}
+
+#uploaded-image-text {
+  color: gray;
+}
+
+#submit-button {
+  margin-top: 1rem;
+  padding: 0.5rem 2rem;
+  @apply bg-rose-500 hover:bg-rose-600;
+}
+
+.spinner {
+  border: 3px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #000;
+  border-radius: 50%;
+  width: 1em;
+  height: 1em;
+  animation: spin 1s linear infinite;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

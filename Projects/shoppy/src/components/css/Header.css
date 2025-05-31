@@ -22,7 +22,7 @@ header {
   @apply flex items-center gap-5;
 }
 
-.login button {
-  padding: 2px;
-  @apply text-stone-50 bg-rose-500;
+#login-button {
+  @apply text-stone-50;
+  @apply bg-rose-500 hover:bg-rose-600;
 }

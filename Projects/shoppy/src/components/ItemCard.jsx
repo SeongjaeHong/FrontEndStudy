@@ -1,14 +1,20 @@
-import React from 'react';
+import './css/ItemCard.css';
 
-export default function ItemCard() {
+export default function ItemCard({ item }) {
   return (
-    <div className='card'>
-      <div className='thumbnail'></div>
-      <div className='item-info'>
-        <span className='name'>아무 12345123455 이름</span>
-        <span className='price'>\12345</span>
-        <span className='sex'>남성</span>
+    <>
+      <div className='thumbnail'>
+        <img src={`/image/${item.image}`} />
       </div>
-    </div>
+      <div className='item-info'>
+        <p className='name'>{item.name}</p>
+        <p className='price'>
+          {item.price}
+          {'원 '}
+          <del style={{ color: 'gray' }}>{item.price * 1.8}원</del>
+        </p>
+        <p className='sex'>{item.sex}</p>
+      </div>
+    </>
   );
 }

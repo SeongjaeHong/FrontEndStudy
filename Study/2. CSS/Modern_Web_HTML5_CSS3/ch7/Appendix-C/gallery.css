@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #141414;
+  /* display: flow-root; */
+  overflow: hidden;
+  height: 100%;
+}
+
+.image {
+  width: 100px;
+  height: 60px;
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  border: 3px solid white;
+  box-sizing: border-box;
+  background: url('https://place-hold.it/100x60');
+  background-size: contain;
+}
+
+#viewport {
+  transform-style: preserve-3d;
+  perspective: 2000px;
+  position: relative;
+  height: 100%;
+  transform: rotateX(-10deg);
+}
+
+#gallery {
+  width: 100px;
+  height: 60px;
+  transform-style: preserve-3d;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -50px;
+  margin-top: -30px;
+}

@@ -1,17 +1,13 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import './css/Edit.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons/faTrash';
+import { useNavigate } from 'react-router';
+import { fetchItem, removeItem } from '../api/firebaseAPI';
 
 export default function Edit() {
-  const mockItemList = [
-    ['바지', '새바지', '남성', 12300],
-    ['장갑', '벙어리 장갑', '여성', 9380],
-  ];
-  const checkboxCount = mockItemList.length; // TODO: 한 개 페이지에서 보여줄 아이템 항목 갯수로 사용 (사용자 변경 가능 옵션). 실제 DB 조회 개수 할당
-  const [checkedBoxes, setCheckedBoxes] = useState(
-    new Array(checkboxCount).fill(false)
-  );
+  const navigate = useNavigate();
+  const [checkedBoxes, setCheckedBoxes] = useState([]);
   const displayItemFuncHandle = (index) => {
     const updatedBoxes = [...checkedBoxes];
     updatedBoxes[index] = !updatedBoxes[index];
@@ -62,18 +58,71 @@ export default function Edit() {
     }
   };
 
+  const [reload, setReload] = useState(false);
+  const removeItemHandle = async () => {
+    const removeIds = [];
+    checkedBoxes.map((isChecked, index) => {
+      if (!isChecked) return;
+      removeIds.push(formData[index].id);
+    });
+
+    try {
+      await removeItem(removeIds);
+      setReload((prev) => !prev);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  const [formData, setFormData] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function loadItems() {
+      try {
+        const items = await fetchItem();
+        setFormData(items);
+        setCheckedBoxes(new Array(items.length).fill(false));
+      } catch (err) {
+        console.error('데이터 Fetch 오류: ', err);
+      } finally {
+        setLoading(false);
+      }
+    }
+    loadItems();
+  }, [reload]);
+
+  if (loading) {
+    return <div>데이터 로딩 중...</div>;
+  }
+
   return (
     <section className='column-edit'>
       <section className='item-funcs'>
-        <div
-          className='item-func hover-cicle'
-          hidden={!isAnyChecked}
-          data-tooltip='Delete'
-          onMouseEnter={tooltipEnterHandle}
-          onMouseLeave={tooltipLeaveHandle}
-        >
-          <FontAwesomeIcon icon={faTrash} />
-        </div>
+        <section className='left-side'>
+          <div
+            className='item-func hover-cicle'
+            hidden={!isAnyChecked}
+            data-tooltip='Delete'
+            onMouseEnter={tooltipEnterHandle}
+            onMouseLeave={tooltipLeaveHandle}
+            onClick={() => {
+              tooltipLeaveHandle();
+              removeItemHandle();
+            }}
+          >
+            <FontAwesomeIcon icon={faTrash} />
+          </div>
+        </section>
+        <section className='right-side'>
+          <button
+            className='style-button'
+            id='add-item'
+            onClick={() => navigate('/edit-detail')}
+          >
+            추가
+          </button>
+        </section>
       </section>
       <table className='item-list'>
         <thead>
@@ -87,23 +136,24 @@ export default function Edit() {
           </tr>
         </thead>
         <tbody>
-          {mockItemList.map((mockItem, index) => (
-            <tr className='item' key={index}>
-              <td className='checkbox'>
-                <div className='hover-cicle'>
-                  <input
-                    type='checkbox'
-                    onChange={(e) => checkboxChangeHandle(e, index)}
-                  />
-                </div>
-              </td>
-              <td className='index'>{index + 1}</td>
-              <td className='category'>{mockItem[0]}</td>
-              <td className='name'>{mockItem[1]}</td>
-              <td className='sex'>{mockItem[2]}</td>
-              <td className='price'>{mockItem[3]}</td>
-            </tr>
-          ))}
+          {!loading &&
+            formData.map((item, index) => (
+              <tr className='item' key={item.id}>
+                <td className='checkbox'>
+                  <div className='hover-cicle'>
+                    <input
+                      type='checkbox'
+                      onChange={(e) => checkboxChangeHandle(e, index)}
+                    />
+                  </div>
+                </td>
+                <td className='index'>{index + 1}</td>
+                <td className='category'>{item.category}</td>
+                <td className='name'>{item.name}</td>
+                <td className='sex'>{item.sex}</td>
+                <td className='price'>{item.price}</td>
+              </tr>
+            ))}
         </tbody>
       </table>
     </section>
