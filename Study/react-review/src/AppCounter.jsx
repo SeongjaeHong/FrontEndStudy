@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Counter from './components/Counter';
 import './App.css';
+import ErrorBoundary from './ErrorBoundary';
 
 export default function AppCounter() {
   const [count, setCount] = useState(0);
@@ -11,7 +12,9 @@ export default function AppCounter() {
         Total Count: {count} {count > 10 ? '불' : '얼음'}
       </div>
       <div className='counters'>
-        <Counter setTotalCount={setCount} />
+        <ErrorBoundary>
+          <Counter setTotalCount={setCount} />
+        </ErrorBoundary>
         <Counter setTotalCount={setCount} />
       </div>
     </div>
