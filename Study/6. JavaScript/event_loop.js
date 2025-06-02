@@ -83,7 +83,13 @@ function f2() {
 }
 
 async function f3() {
-  await f4();
+  try {
+    await f4();
+    addDiv('Call stack #20.5', 'yellow');
+  } catch (error) {
+    addDiv('Error occurred @3', 'yellow');
+  }
+
   addDiv('Call stack #21', 'yellow');
   Promise.resolve().then(() => {
     addDiv('Micro task queue #22', 'yellow');
@@ -111,6 +117,7 @@ async function f4() {
     .finally(() => {
       addDiv('Micro task queue: #30', 'cyan');
     });
+  throw error('Error in f4');
 }
 
 main();
