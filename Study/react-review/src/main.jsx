@@ -4,8 +4,4 @@ import AppTheme from './AppTheme';
 import AppCounter from './AppCounter';
 import ErrorBoundary from './ErrorBoundary';
 
-createRoot(document.getElementById('root')).render(
-  <ErrorBoundary>
-    <AppCounter />
-  </ErrorBoundary>
-);
+createRoot(document.getElementById('root')).render(<AppCounter />);

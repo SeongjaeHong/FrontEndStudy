@@ -15,7 +15,7 @@ export default function AppCounter() {
         <ErrorBoundary>
           <Counter setTotalCount={setCount} />
         </ErrorBoundary>
-        <Counter setTotalCount={setCount} />
+        {/* <Counter setTotalCount={setCount} /> */}
       </div>
     </div>
   );
