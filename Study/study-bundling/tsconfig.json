@@ -8,6 +8,6 @@
     "jsx": "react", // JSX를 React 문법으로 변환해요
     "esModuleInterop": true // React를 ESM으로 import할 수 있게 해줘요
   },
-  "include": ["./**/*.js", "emoji.ts", "main.ts"],
+  "include": ["./**/*.js", "emoji.ts", "main.tsx"],
   "exclude": ["node_modules", "dist"]
 }
