@@ -1,8 +1,9 @@
 import { emojis } from './emoji.js';
+import { format } from 'date-fns';
 
 document.addEventListener('DOMContentLoaded', function () {
   const today = new Date();
-  const formattedDate = dateFns.format(today, 'MMMM d, yyyy');
+  const formattedDate = format(today, 'MMMM d, yyyy');
   document.getElementById('dateDisplay').textContent = formattedDate;
 
   showRandomEmoji();
