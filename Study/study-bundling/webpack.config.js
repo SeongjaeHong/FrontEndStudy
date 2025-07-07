@@ -36,6 +36,10 @@ export default {
           'css-loader', // CSS를 JavaScript 모듈로 변환해요
         ],
       },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i, // 이미지 파일 확장자
+        type: 'asset', // Asset modules 사용
+      },
     ],
   },
   resolve: {
