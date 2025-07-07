@@ -1,5 +1,6 @@
 import path from 'path';
 import { fileURLToPath } from 'url';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -49,6 +50,13 @@ export default {
       },
     ],
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './index.html', // 템플릿 HTML
+      filename: 'index-auto.html', // 출력될 HTML 파일 이름
+      inject: true, // <script> 태그 자동 삽입
+    }),
+  ],
   resolve: {
     extensions: ['.tsx', '.ts', '.js'], // 파일을 import할 때 확장자를 생략할 수 있어요. TypeScript와 JavaScript를 혼용하는 프로젝트에서 설정해두면 좋아요.
   },
