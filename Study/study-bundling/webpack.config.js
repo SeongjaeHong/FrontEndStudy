@@ -5,7 +5,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 export default {
-  entry: './main.ts', // 어떤 파일을 진입점으로 번들링할지
+  entry: './main.tsx', // 어떤 파일을 진입점으로 번들링할지
   mode: 'development', // 소스맵 포함, 최소한의 코드 압축(공백 제거, 변수명 단순화 등)
   output: {
     filename: 'bundle.js', // 번들로 만들어질 파일 이름
@@ -14,13 +14,24 @@ export default {
   module: {
     rules: [
       {
-        test: /\.ts$/, // .ts 파일들은
-        use: 'ts-loader', // ts-loader를 거쳐 처리돼요.
+        test: /\.(ts|tsx)$/, // .ts와 .tsx 파일들은
+        use: [
+          {
+            loader: 'babel-loader', // babel loader로 처리해요
+            options: {
+              presets: [
+                '@babel/preset-env', // 최신 JS 문법을 변환해요
+                ['@babel/preset-react', { runtime: 'automatic' }], // JSX를 변환해요
+                '@babel/preset-typescript', // 타입스크립트를 변환해요
+              ],
+            },
+          },
+        ],
         exclude: /node_modules/, // 외부 모듈은 제외해요.
       },
     ],
   },
   resolve: {
-    extensions: ['.ts', '.js'], // 파일을 import할 때 확장자를 생략할 수 있어요. TypeScript와 JavaScript를 혼용하는 프로젝트에서 설정해두면 좋아요.
+    extensions: ['.tsx', '.ts', '.js'], // 파일을 import할 때 확장자를 생략할 수 있어요. TypeScript와 JavaScript를 혼용하는 프로젝트에서 설정해두면 좋아요.
   },
 };
