@@ -11,6 +11,7 @@ export default {
   output: {
     filename: 'bundle.js', // 번들로 만들어질 파일 이름
     path: path.resolve(__dirname, 'dist'), // 번들 파일이 어디에 저장될지
+    clean: true, // build 때마다 [path] 내 기존 파일 삭제
   },
   module: {
     rules: [
