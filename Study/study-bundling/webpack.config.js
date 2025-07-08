@@ -52,8 +52,9 @@ export default {
   },
   plugins: [
     new HtmlWebpackPlugin({
+      // build 시 script 자동 삽입해서 dist 폴더에 떨어트리는 plugin
       template: './index.html', // 템플릿 HTML
-      filename: 'index.html', // 출력될 HTML 파일 이름
+      filename: 'index.html', // 출력될 HTML 파일 이름 (기본 값이므로 설정할 필요 없음)
       inject: true, // <script> 태그 자동 삽입
     }),
   ],
@@ -66,8 +67,7 @@ export default {
     },
     port: 3000, // localhost:3000에서 실행
     open: true, // 서버 실행 시 브라우저 자동 열기
-    hot: true, // HMR 사용
-    historyApiFallback: true, // SPA 라우팅 지원
+    historyApiFallback: true, // SPA 라우팅 지원 (404 에러 발생 시 index.html 로드)
     client: {
       overlay: true, // 에러 발생 시 브라우저에 띄워줘요
     },
